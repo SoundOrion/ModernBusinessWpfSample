@@ -4,8 +4,8 @@
         xmlns:shell="clr-namespace:System.Windows.Shell;assembly=PresentationFramework"
         xmlns:conv="clr-namespace:ModernBusinessWpfSample.Desktop.Converters"
         Title="Modern Business WPF Sample"
-        Width="1360" Height="860"
-        MinWidth="1120" MinHeight="740"
+        Width="1280" Height="820"
+        MinWidth="1100" MinHeight="720"
         WindowStartupLocation="CenterScreen"
         WindowStyle="None"
         ResizeMode="CanResize"
@@ -14,120 +14,92 @@
         <shell:WindowChrome CaptionHeight="0"
                             ResizeBorderThickness="8"
                             GlassFrameThickness="0"
-                            CornerRadius="18"
+                            CornerRadius="0"
                             UseAeroCaptionButtons="False" />
     </shell:WindowChrome.WindowChrome>
 
     <Window.Resources>
         <conv:StringEqualsToVisibilityConverter x:Key="StringEqualsToVisibilityConverter" />
 
-        <!-- 2026 palette: luminous dark canvas, glass cards, neon business accents. -->
-        <SolidColorBrush x:Key="AppBg" Color="#070A12" />
-        <SolidColorBrush x:Key="Surface" Color="#E61A2033" />
-        <SolidColorBrush x:Key="SurfaceAlt" Color="#B8141A2A" />
-        <SolidColorBrush x:Key="BorderSoft" Color="#33FFFFFF" />
-        <SolidColorBrush x:Key="TextStrong" Color="#F8FAFC" />
-        <SolidColorBrush x:Key="TextMuted" Color="#9AA8C7" />
-        <SolidColorBrush x:Key="Accent" Color="#7C3AED" />
-        <SolidColorBrush x:Key="AccentHover" Color="#06B6D4" />
-        <SolidColorBrush x:Key="AccentSoft" Color="#26235BFF" />
-        <SolidColorBrush x:Key="SuccessSoft" Color="#1E10B981" />
-        <SolidColorBrush x:Key="Success" Color="#2DD4BF" />
-        <SolidColorBrush x:Key="TitleBarBg" Color="#070A12" />
-        <SolidColorBrush x:Key="TitleBarBg2" Color="#111827" />
-        <SolidColorBrush x:Key="TitleBarBorder" Color="#334155" />
+        <SolidColorBrush x:Key="AppBg" Color="#F3F6FB" />
+        <SolidColorBrush x:Key="Surface" Color="#FFFFFF" />
+        <SolidColorBrush x:Key="SurfaceAlt" Color="#F8FAFC" />
+        <SolidColorBrush x:Key="BorderSoft" Color="#E2E8F0" />
+        <SolidColorBrush x:Key="TextStrong" Color="#162033" />
+        <SolidColorBrush x:Key="TextMuted" Color="#64748B" />
+        <SolidColorBrush x:Key="Accent" Color="#2563EB" />
+        <SolidColorBrush x:Key="AccentHover" Color="#1D4ED8" />
+        <SolidColorBrush x:Key="AccentSoft" Color="#EAF1FF" />
+        <SolidColorBrush x:Key="SuccessSoft" Color="#ECFDF3" />
+        <SolidColorBrush x:Key="Success" Color="#039855" />
+        <SolidColorBrush x:Key="TitleBarBg" Color="#0F172A" />
+        <SolidColorBrush x:Key="TitleBarBg2" Color="#1E3A8A" />
+        <SolidColorBrush x:Key="TitleBarBorder" Color="#1D4ED8" />
         <SolidColorBrush x:Key="TitleBarText" Color="#FFFFFF" />
-        <SolidColorBrush x:Key="TitleBarSubtle" Color="#A5B4FC" />
-        <SolidColorBrush x:Key="NavigationHover" Color="#26FFFFFF" />
-        <SolidColorBrush x:Key="RowBorder" Color="#1F2937" />
-        <SolidColorBrush x:Key="HeaderIconBg" Color="#2E1E1B4B" />
-        <SolidColorBrush x:Key="HeaderBadgeBg" Color="#2B0F172A" />
-        <SolidColorBrush x:Key="HeaderUserBg" Color="#331E293B" />
-        <SolidColorBrush x:Key="HeaderBadgeBorder" Color="#667C3AED" />
-        <SolidColorBrush x:Key="HeaderOnline" Color="#34D399" />
-        <SolidColorBrush x:Key="HeaderOnlineText" Color="#D1FAE5" />
-        <SolidColorBrush x:Key="Danger" Color="#FB7185" />
-        <SolidColorBrush x:Key="Warning" Color="#FBBF24" />
-        <SolidColorBrush x:Key="GlassStroke" Color="#40FFFFFF" />
-        <SolidColorBrush x:Key="InputFill" Color="#14FFFFFF" />
-
-        <LinearGradientBrush x:Key="TitleGradientBrush" StartPoint="0,0" EndPoint="1,1">
-            <GradientStop x:Name="TitleGradientStart" Color="#312E81" Offset="0" />
-            <GradientStop Color="#7C3AED" Offset="0.45" />
-            <GradientStop x:Name="TitleGradientEnd" Color="#06B6D4" Offset="1" />
-        </LinearGradientBrush>
-        <RadialGradientBrush x:Key="AuroraOne" Center="0.12,0.04" GradientOrigin="0.12,0.04" RadiusX="0.72" RadiusY="0.72">
-            <GradientStop Color="#805B21B6" Offset="0" />
-            <GradientStop Color="#00070A12" Offset="1" />
-        </RadialGradientBrush>
-        <RadialGradientBrush x:Key="AuroraTwo" Center="0.88,0.12" GradientOrigin="0.88,0.12" RadiusX="0.65" RadiusY="0.65">
-            <GradientStop Color="#7038BDF8" Offset="0" />
-            <GradientStop Color="#00070A12" Offset="1" />
-        </RadialGradientBrush>
+        <SolidColorBrush x:Key="TitleBarSubtle" Color="#BFDBFE" />
+        <SolidColorBrush x:Key="NavigationHover" Color="#F1F5F9" />
+        <SolidColorBrush x:Key="RowBorder" Color="#EEF2F7" />
+        <SolidColorBrush x:Key="HeaderIconBg" Color="#DBEAFE" />
+        <SolidColorBrush x:Key="HeaderBadgeBg" Color="#153E75" />
+        <SolidColorBrush x:Key="HeaderUserBg" Color="#172554" />
+        <SolidColorBrush x:Key="HeaderBadgeBorder" Color="#3B82F6" />
+        <SolidColorBrush x:Key="HeaderOnline" Color="#22C55E" />
+        <SolidColorBrush x:Key="HeaderOnlineText" Color="#DCFCE7" />
 
         <Style x:Key="PageTitle" TargetType="TextBlock">
-            <Setter Property="FontSize" Value="34" />
-            <Setter Property="FontWeight" Value="Bold" />
-            <Setter Property="Foreground" Value="{DynamicResource TextStrong}" />
-        </Style>
-
-        <Style x:Key="SectionEyebrow" TargetType="TextBlock">
-            <Setter Property="FontSize" Value="12" />
+            <Setter Property="FontSize" Value="28" />
             <Setter Property="FontWeight" Value="SemiBold" />
-            <Setter Property="Foreground" Value="{DynamicResource AccentHover}" />
-            <Setter Property="TextOptions.TextFormattingMode" Value="Display" />
+            <Setter Property="Foreground" Value="{DynamicResource TextStrong}" />
         </Style>
 
         <Style x:Key="LabelText" TargetType="TextBlock">
             <Setter Property="FontSize" Value="12" />
             <Setter Property="FontWeight" Value="SemiBold" />
             <Setter Property="Foreground" Value="{DynamicResource TextMuted}" />
-            <Setter Property="Margin" Value="0,0,0,7" />
+            <Setter Property="Margin" Value="0,0,0,6" />
         </Style>
 
-        <Style x:Key="GlassCard" TargetType="Border">
-            <Setter Property="CornerRadius" Value="30" />
+        <Style x:Key="PanelCard" TargetType="Border">
+            <Setter Property="CornerRadius" Value="24" />
             <Setter Property="Background" Value="{DynamicResource Surface}" />
-            <Setter Property="BorderBrush" Value="{DynamicResource GlassStroke}" />
+            <Setter Property="BorderBrush" Value="{DynamicResource BorderSoft}" />
             <Setter Property="BorderThickness" Value="1" />
             <Setter Property="Padding" Value="26" />
+            <Setter Property="Margin" Value="0,0,0,18" />
             <Setter Property="Effect">
                 <Setter.Value>
-                    <DropShadowEffect BlurRadius="36" ShadowDepth="10" Opacity="0.22" Color="#000000" />
+                    <DropShadowEffect BlurRadius="24" ShadowDepth="4" Opacity="0.08" Color="#64748B" />
                 </Setter.Value>
             </Setter>
         </Style>
 
-        <Style x:Key="PanelCard" TargetType="Border" BasedOn="{StaticResource GlassCard}">
-            <Setter Property="Margin" Value="0,0,0,18" />
-        </Style>
-
-        <Style x:Key="MetricCard" TargetType="Border" BasedOn="{StaticResource GlassCard}">
-            <Setter Property="CornerRadius" Value="26" />
+        <Style x:Key="MetricCard" TargetType="Border">
+            <Setter Property="CornerRadius" Value="20" />
+            <Setter Property="Background" Value="{DynamicResource Surface}" />
+            <Setter Property="BorderBrush" Value="{DynamicResource BorderSoft}" />
+            <Setter Property="BorderThickness" Value="1" />
             <Setter Property="Padding" Value="22" />
-            <Setter Property="Margin" Value="0,0,16,0" />
+            <Setter Property="Margin" Value="0,0,14,0" />
         </Style>
 
         <Style x:Key="InputBox" TargetType="TextBox">
-            <Setter Property="Height" Value="48" />
-            <Setter Property="Padding" Value="16,0" />
+            <Setter Property="Height" Value="42" />
+            <Setter Property="Padding" Value="14,0" />
             <Setter Property="FontSize" Value="14" />
             <Setter Property="Foreground" Value="{DynamicResource TextStrong}" />
-            <Setter Property="CaretBrush" Value="{DynamicResource AccentHover}" />
-            <Setter Property="Background" Value="{DynamicResource InputFill}" />
+            <Setter Property="Background" Value="{DynamicResource Surface}" />
             <Setter Property="BorderBrush" Value="{DynamicResource BorderSoft}" />
             <Setter Property="BorderThickness" Value="1" />
             <Setter Property="VerticalContentAlignment" Value="Center" />
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="TextBox">
-                        <Border x:Name="Root" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="16">
-                            <ScrollViewer x:Name="PART_ContentHost" Margin="0" />
+                        <Border x:Name="Root" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="12">
+                            <ScrollViewer x:Name="PART_ContentHost" />
                         </Border>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsKeyboardFocusWithin" Value="True">
-                                <Setter TargetName="Root" Property="BorderBrush" Value="{DynamicResource AccentHover}" />
-                                <Setter TargetName="Root" Property="Background" Value="#22FFFFFF" />
+                                <Setter TargetName="Root" Property="BorderBrush" Value="{DynamicResource Accent}" />
                             </Trigger>
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
@@ -136,40 +108,36 @@
         </Style>
 
         <Style TargetType="ComboBox">
-            <Setter Property="Height" Value="48" />
-            <Setter Property="Padding" Value="14,0" />
+            <Setter Property="Height" Value="42" />
             <Setter Property="FontSize" Value="14" />
+            <Setter Property="Padding" Value="10,0" />
             <Setter Property="Foreground" Value="{DynamicResource TextStrong}" />
-            <Setter Property="Background" Value="{DynamicResource InputFill}" />
+            <Setter Property="Background" Value="{DynamicResource Surface}" />
             <Setter Property="BorderBrush" Value="{DynamicResource BorderSoft}" />
             <Setter Property="VerticalContentAlignment" Value="Center" />
         </Style>
 
         <Style x:Key="PrimaryButton" TargetType="Button">
-            <Setter Property="Height" Value="48" />
-            <Setter Property="Padding" Value="20,0" />
-            <Setter Property="Foreground" Value="White" />
+            <Setter Property="Height" Value="42" />
+            <Setter Property="Padding" Value="18,0" />
+            <Setter Property="FontSize" Value="14" />
             <Setter Property="FontWeight" Value="SemiBold" />
-            <Setter Property="Cursor" Value="Hand" />
-            <Setter Property="Background" Value="{StaticResource TitleGradientBrush}" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="Background" Value="{DynamicResource Accent}" />
             <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="Cursor" Value="Hand" />
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
-                        <Border x:Name="Root" Background="{TemplateBinding Background}" CornerRadius="16" Padding="{TemplateBinding Padding}">
+                        <Border x:Name="Root" Background="{TemplateBinding Background}" CornerRadius="12" Padding="{TemplateBinding Padding}">
                             <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
                         </Border>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsMouseOver" Value="True">
-                                <Setter TargetName="Root" Property="Opacity" Value="0.9" />
+                                <Setter TargetName="Root" Property="Background" Value="{DynamicResource AccentHover}" />
                             </Trigger>
                             <Trigger Property="IsPressed" Value="True">
-                                <Setter TargetName="Root" Property="RenderTransform">
-                                    <Setter.Value>
-                                        <ScaleTransform ScaleX="0.98" ScaleY="0.98" />
-                                    </Setter.Value>
-                                </Setter>
-                                <Setter TargetName="Root" Property="RenderTransformOrigin" Value="0.5,0.5" />
+                                <Setter TargetName="Root" Property="Opacity" Value="0.86" />
                             </Trigger>
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
@@ -177,24 +145,29 @@
             </Setter>
         </Style>
 
-        <Style x:Key="GhostButton" TargetType="Button">
-            <Setter Property="Height" Value="40" />
-            <Setter Property="Padding" Value="14,0" />
-            <Setter Property="Foreground" Value="{DynamicResource TextStrong}" />
-            <Setter Property="Background" Value="#12FFFFFF" />
-            <Setter Property="BorderBrush" Value="{DynamicResource BorderSoft}" />
-            <Setter Property="BorderThickness" Value="1" />
+
+        <Style x:Key="TitleBarButton" TargetType="Button">
+            <Setter Property="Width" Value="36" />
+            <Setter Property="Height" Value="36" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="FontSize" Value="15" />
             <Setter Property="FontWeight" Value="SemiBold" />
             <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="shell:WindowChrome.IsHitTestVisibleInChrome" Value="True" />
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
-                        <Border x:Name="Root" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="14" Padding="{TemplateBinding Padding}">
+                        <Border x:Name="Root" Background="{TemplateBinding Background}" CornerRadius="10">
                             <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
                         </Border>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsMouseOver" Value="True">
-                                <Setter TargetName="Root" Property="Background" Value="{DynamicResource NavigationHover}" />
+                                <Setter TargetName="Root" Property="Background" Value="#2563EB" />
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="Root" Property="Opacity" Value="0.78" />
                             </Trigger>
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
@@ -202,41 +175,85 @@
             </Setter>
         </Style>
 
-        <Style x:Key="WindowButton" TargetType="Button" BasedOn="{StaticResource GhostButton}">
-            <Setter Property="Width" Value="42" />
-            <Setter Property="Height" Value="34" />
-            <Setter Property="Padding" Value="0" />
-            <Setter Property="FontSize" Value="13" />
+        <Style x:Key="TitleBarCloseButton" TargetType="Button" BasedOn="{StaticResource TitleBarButton}">
+            <Setter Property="FontSize" Value="20" />
+            <Setter Property="ToolTip" Value="閉じる" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="Root" Background="{TemplateBinding Background}" CornerRadius="10">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,-2,0,0" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="Root" Property="Background" Value="#DC2626" />
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="Root" Property="Background" Value="#991B1B" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
         </Style>
 
-        <Style x:Key="NavItemStyle" TargetType="ListBoxItem">
-            <Setter Property="Margin" Value="0,0,0,8" />
-            <Setter Property="Padding" Value="16,13" />
+        <Style x:Key="GhostButton" TargetType="Button" BasedOn="{StaticResource PrimaryButton}">
+            <Setter Property="Foreground" Value="{DynamicResource TextStrong}" />
+            <Setter Property="Background" Value="{DynamicResource SurfaceAlt}" />
+            <Setter Property="BorderBrush" Value="{DynamicResource BorderSoft}" />
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="Root" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="12" Padding="{TemplateBinding Padding}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="Root" Property="Background" Value="{DynamicResource AccentSoft}" />
+                                <Setter Property="Foreground" Value="{DynamicResource Accent}" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style TargetType="ListBox">
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="Background" Value="Transparent" />
+        </Style>
+        <Style TargetType="ListBoxItem">
+            <Setter Property="Height" Value="48" />
+            <Setter Property="Padding" Value="16,0" />
+            <Setter Property="Margin" Value="0,4,0,4" />
             <Setter Property="Foreground" Value="{DynamicResource TextMuted}" />
+            <Setter Property="FontSize" Value="15" />
             <Setter Property="FontWeight" Value="SemiBold" />
             <Setter Property="Cursor" Value="Hand" />
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="ListBoxItem">
-                        <Border x:Name="Root" CornerRadius="18" Background="Transparent" BorderBrush="Transparent" BorderThickness="1" Padding="{TemplateBinding Padding}">
+                        <Border x:Name="Root" Background="Transparent" CornerRadius="14" Padding="{TemplateBinding Padding}">
                             <Grid>
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="4" />
+                                    <ColumnDefinition Width="12" />
                                     <ColumnDefinition Width="*" />
                                 </Grid.ColumnDefinitions>
-                                <Ellipse x:Name="Dot" Width="8" Height="8" Fill="{DynamicResource AccentHover}" Opacity="0" Margin="0,0,12,0" />
-                                <ContentPresenter Grid.Column="1" VerticalAlignment="Center" />
+                                <Border x:Name="Indicator" Grid.Column="0" Width="4" CornerRadius="2" Background="Transparent" />
+                                <ContentPresenter Grid.Column="2" VerticalAlignment="Center" />
                             </Grid>
                         </Border>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsMouseOver" Value="True">
                                 <Setter TargetName="Root" Property="Background" Value="{DynamicResource NavigationHover}" />
+                                <Setter Property="Foreground" Value="{DynamicResource TextStrong}" />
                             </Trigger>
                             <Trigger Property="IsSelected" Value="True">
-                                <Setter Property="Foreground" Value="{DynamicResource TextStrong}" />
-                                <Setter TargetName="Root" Property="Background" Value="#24FFFFFF" />
-                                <Setter TargetName="Root" Property="BorderBrush" Value="{DynamicResource HeaderBadgeBorder}" />
-                                <Setter TargetName="Dot" Property="Opacity" Value="1" />
+                                <Setter TargetName="Root" Property="Background" Value="{DynamicResource AccentSoft}" />
+                                <Setter TargetName="Indicator" Property="Background" Value="{DynamicResource Accent}" />
+                                <Setter Property="Foreground" Value="{DynamicResource Accent}" />
                             </Trigger>
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
@@ -249,407 +266,382 @@
             <Setter Property="BorderThickness" Value="0" />
             <Setter Property="GridLinesVisibility" Value="None" />
             <Setter Property="HeadersVisibility" Value="Column" />
-            <Setter Property="RowHeaderWidth" Value="0" />
-            <Setter Property="AutoGenerateColumns" Value="False" />
-            <Setter Property="CanUserAddRows" Value="False" />
-            <Setter Property="CanUserDeleteRows" Value="False" />
-            <Setter Property="IsReadOnly" Value="True" />
+            <Setter Property="RowHeight" Value="46" />
+            <Setter Property="FontSize" Value="14" />
             <Setter Property="Foreground" Value="{DynamicResource TextStrong}" />
-            <Setter Property="RowBackground" Value="Transparent" />
-            <Setter Property="AlternatingRowBackground" Value="#08FFFFFF" />
+            <Setter Property="HorizontalGridLinesBrush" Value="Transparent" />
+            <Setter Property="VerticalGridLinesBrush" Value="Transparent" />
+            <Setter Property="CanUserResizeRows" Value="False" />
         </Style>
-
         <Style TargetType="DataGridColumnHeader">
+            <Setter Property="Background" Value="{DynamicResource SurfaceAlt}" />
             <Setter Property="Foreground" Value="{DynamicResource TextMuted}" />
-            <Setter Property="Background" Value="Transparent" />
-            <Setter Property="BorderBrush" Value="{DynamicResource RowBorder}" />
-            <Setter Property="BorderThickness" Value="0,0,0,1" />
-            <Setter Property="Padding" Value="12,0,12,12" />
             <Setter Property="FontWeight" Value="SemiBold" />
+            <Setter Property="Padding" Value="14,0" />
+            <Setter Property="Height" Value="44" />
+            <Setter Property="BorderThickness" Value="0,0,0,1" />
+            <Setter Property="BorderBrush" Value="{DynamicResource BorderSoft}" />
         </Style>
-
         <Style TargetType="DataGridCell">
+            <Setter Property="Padding" Value="14,0" />
             <Setter Property="BorderThickness" Value="0" />
-            <Setter Property="Padding" Value="12,8" />
-            <Setter Property="Background" Value="Transparent" />
-            <Setter Property="Foreground" Value="{DynamicResource TextStrong}" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="DataGridCell">
+                        <Border Background="{TemplateBinding Background}" Padding="{TemplateBinding Padding}">
+                            <ContentPresenter VerticalAlignment="Center" />
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
         </Style>
-
         <Style TargetType="DataGridRow">
-            <Setter Property="MinHeight" Value="44" />
+            <Setter Property="Background" Value="{DynamicResource Surface}" />
             <Setter Property="BorderBrush" Value="{DynamicResource RowBorder}" />
             <Setter Property="BorderThickness" Value="0,0,0,1" />
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="{DynamicResource SurfaceAlt}" />
+                </Trigger>
+            </Style.Triggers>
         </Style>
     </Window.Resources>
 
-    <Grid>
-        <Grid.Background>
-            <DrawingBrush Stretch="Fill">
-                <DrawingBrush.Drawing>
-                    <DrawingGroup>
-                        <GeometryDrawing Brush="{DynamicResource AppBg}">
-                            <GeometryDrawing.Geometry>
-                                <RectangleGeometry Rect="0,0,1,1" />
-                            </GeometryDrawing.Geometry>
-                        </GeometryDrawing>
-                        <GeometryDrawing Brush="{StaticResource AuroraOne}">
-                            <GeometryDrawing.Geometry>
-                                <RectangleGeometry Rect="0,0,1,1" />
-                            </GeometryDrawing.Geometry>
-                        </GeometryDrawing>
-                        <GeometryDrawing Brush="{StaticResource AuroraTwo}">
-                            <GeometryDrawing.Geometry>
-                                <RectangleGeometry Rect="0,0,1,1" />
-                            </GeometryDrawing.Geometry>
-                        </GeometryDrawing>
-                    </DrawingGroup>
-                </DrawingBrush.Drawing>
-            </DrawingBrush>
-        </Grid.Background>
+    <Grid Background="{DynamicResource AppBg}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="72" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="280" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
 
-        <Border Margin="18" CornerRadius="34" BorderBrush="{DynamicResource GlassStroke}" BorderThickness="1" Background="#66070A12">
+        <!-- Pure WPF custom chrome. The header acts as the drag surface and hosts window controls. -->
+        <Border Grid.Row="0" Grid.ColumnSpan="2" BorderBrush="{DynamicResource TitleBarBorder}" BorderThickness="0,0,0,1" Padding="22,0" MouseLeftButtonDown="AppHeader_MouseLeftButtonDown">
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                    <GradientStop x:Name="TitleGradientStart" Color="#0F172A" Offset="0" />
+                    <GradientStop x:Name="TitleGradientEnd" Color="#1E3A8A" Offset="1" />
+                </LinearGradientBrush>
+            </Border.Background>
             <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="86" />
-                    <RowDefinition Height="*" />
-                    <RowDefinition Height="72" />
-                </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="248" />
                     <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
                 </Grid.ColumnDefinitions>
 
-                <Border x:Name="AppHeader" Grid.ColumnSpan="2" Background="#26000000" CornerRadius="34,34,0,0" MouseLeftButtonDown="AppHeader_MouseLeftButtonDown">
-                    <Grid Margin="26,0">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto" />
-                            <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="Auto" />
-                        </Grid.ColumnDefinitions>
-                        <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
-                            <Border Width="46" Height="46" CornerRadius="16" Background="{StaticResource TitleGradientBrush}">
-                                <TextBlock Text="✦" Foreground="White" FontSize="22" HorizontalAlignment="Center" VerticalAlignment="Center" />
-                            </Border>
-                            <StackPanel Margin="14,0,0,0" VerticalAlignment="Center">
-                                <TextBlock Text="NOVA OPS" Foreground="{DynamicResource TitleBarText}" FontSize="18" FontWeight="Bold" />
-                                <TextBlock Text="AI-ready commerce command center" Foreground="{DynamicResource TitleBarSubtle}" FontSize="12" />
-                            </StackPanel>
-                        </StackPanel>
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                    <Border Width="38" Height="38" CornerRadius="13" Background="{DynamicResource HeaderIconBg}" Margin="0,0,14,0">
+                        <TextBlock Text="業" FontSize="16" FontWeight="Bold" Foreground="{DynamicResource Accent}" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </Border>
+                    <StackPanel>
+                        <TextBlock Text="Modern Business WPF Sample" FontSize="19" FontWeight="SemiBold" Foreground="{DynamicResource TitleBarText}" />
+                        <TextBlock Text="Pure WPF / MVVM / DI / Clean-ish Layers" FontSize="12" Foreground="{DynamicResource TitleBarSubtle}" />
+                    </StackPanel>
+                </StackPanel>
 
-                        <Border Grid.Column="1" Width="420" Height="44" CornerRadius="18" Background="#16FFFFFF" BorderBrush="{DynamicResource BorderSoft}" BorderThickness="1" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="16,0">
-                            <Grid VerticalAlignment="Center">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="Auto" />
-                                    <ColumnDefinition Width="*" />
-                                    <ColumnDefinition Width="Auto" />
-                                </Grid.ColumnDefinitions>
-                                <TextBlock Text="⌘" Foreground="{DynamicResource AccentHover}" FontSize="16" Margin="0,0,10,0" />
-                                <TextBlock Grid.Column="1" Text="顧客・受注・レポートを横断検索" Foreground="{DynamicResource TextMuted}" VerticalAlignment="Center" />
-                                <Border Grid.Column="2" CornerRadius="9" Background="#22FFFFFF" Padding="8,3">
-                                    <TextBlock Text="K" Foreground="{DynamicResource TextMuted}" FontSize="11" FontWeight="SemiBold" />
-                                </Border>
-                            </Grid>
-                        </Border>
-
-                        <StackPanel Grid.Column="2" Orientation="Horizontal" VerticalAlignment="Center">
-                            <Border CornerRadius="17" Background="{DynamicResource HeaderBadgeBg}" BorderBrush="{DynamicResource HeaderBadgeBorder}" BorderThickness="1" Padding="13,8" Margin="0,0,10,0">
-                                <StackPanel Orientation="Horizontal">
-                                    <Ellipse Width="8" Height="8" Fill="{DynamicResource HeaderOnline}" Margin="0,0,8,0" />
-                                    <TextBlock Text="Live" Foreground="{DynamicResource HeaderOnlineText}" FontWeight="SemiBold" FontSize="12" />
-                                </StackPanel>
-                            </Border>
-                            <Button Style="{StaticResource WindowButton}" Content="—" ToolTip="最小化" Click="MinimizeButton_Click" />
-                            <Button x:Name="MaximizeRestoreButton" Style="{StaticResource WindowButton}" Content="□" ToolTip="最大化" Margin="8,0,0,0" Click="MaximizeRestoreButton_Click" />
-                            <Button Style="{StaticResource WindowButton}" Content="✕" ToolTip="閉じる" Margin="8,0,0,0" Click="CloseButton_Click" />
-                        </StackPanel>
-                    </Grid>
-                </Border>
-
-                <Border Grid.Row="1" Grid.RowSpan="2" Width="1" HorizontalAlignment="Right" Background="{DynamicResource BorderSoft}" Opacity="0.45" />
-                <Grid Grid.Row="1" Grid.RowSpan="2" Margin="22,18,22,24">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto" />
-                        <RowDefinition Height="*" />
-                        <RowDefinition Height="Auto" />
-                    </Grid.RowDefinitions>
-
-                    <Border Style="{StaticResource GlassCard}" Padding="18" Margin="0,0,0,18">
-                        <StackPanel>
-                            <TextBlock Text="Workspace" Foreground="{DynamicResource TextMuted}" FontSize="12" FontWeight="SemiBold" />
-                            <TextBlock Text="Modern Business" Foreground="{DynamicResource TextStrong}" FontSize="20" FontWeight="Bold" Margin="0,4,0,0" />
-                            <TextBlock Text="2026 Edition" Foreground="{DynamicResource AccentHover}" FontSize="12" FontWeight="SemiBold" Margin="0,3,0,0" />
+                <StackPanel Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center">
+                    <Border CornerRadius="15" Background="{DynamicResource HeaderBadgeBg}" BorderBrush="{DynamicResource HeaderBadgeBorder}" BorderThickness="1" Padding="13,8" Margin="0,0,10,0">
+                        <StackPanel Orientation="Horizontal">
+                            <Ellipse Width="8" Height="8" Fill="{DynamicResource HeaderOnline}" Margin="0,0,8,0" />
+                            <TextBlock Text="Online" FontWeight="SemiBold" Foreground="{DynamicResource HeaderOnlineText}" FontSize="12" />
                         </StackPanel>
                     </Border>
+                    <Border CornerRadius="15" Background="{DynamicResource HeaderUserBg}" BorderBrush="{DynamicResource HeaderBadgeBorder}" BorderThickness="1" Padding="13,8" Margin="0,0,10,0">
+                        <TextBlock Text="Admin User" FontWeight="SemiBold" Foreground="White" FontSize="12" />
+                    </Border>
+                    <Button Style="{StaticResource TitleBarButton}" Content="−" ToolTip="最小化" Click="MinimizeButton_Click" />
+                    <Button x:Name="MaximizeRestoreButton" Style="{StaticResource TitleBarButton}" Content="□" ToolTip="最大化" Click="MaximizeRestoreButton_Click" />
+                    <Button Style="{StaticResource TitleBarCloseButton}" Content="×" Click="CloseButton_Click" />
+                </StackPanel>
+            </Grid>
+        </Border>
 
-                    <ListBox Grid.Row="1" ItemsSource="{Binding Sections}" SelectedItem="{Binding SelectedSection, Mode=TwoWay}" ItemContainerStyle="{StaticResource NavItemStyle}" Background="Transparent" BorderThickness="0" />
+        <Border Grid.Row="1" Grid.Column="0" Background="{DynamicResource Surface}" Padding="24" BorderBrush="{DynamicResource BorderSoft}" BorderThickness="0,0,1,0">
+            <DockPanel LastChildFill="True">
+                <StackPanel DockPanel.Dock="Top" Margin="0,18,0,28">
+                    <Border Width="48" Height="48" CornerRadius="16" Background="{DynamicResource AccentSoft}" HorizontalAlignment="Left">
+                        <TextBlock Text="業" FontSize="20" FontWeight="Bold" Foreground="{DynamicResource Accent}" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </Border>
+                    <TextBlock Text="Business Hub" FontSize="24" FontWeight="Bold" Foreground="{DynamicResource TextStrong}" Margin="0,16,0,0" />
+                    <TextBlock Text="Sales operations sample" Foreground="{DynamicResource TextMuted}" Margin="0,6,0,0" />
+                </StackPanel>
 
-                    <Border Grid.Row="2" Style="{StaticResource GlassCard}" Padding="16">
-                        <StackPanel>
-                            <TextBlock Text="SYSTEM HEALTH" Style="{StaticResource SectionEyebrow}" />
-                            <TextBlock Text="{Binding ApiHealth}" Foreground="{DynamicResource TextStrong}" FontSize="18" FontWeight="SemiBold" Margin="0,8,0,0" />
-                            <TextBlock Text="Connected cloud catalog" Foreground="{DynamicResource TextMuted}" FontSize="12" Margin="0,4,0,14" />
-                            <Button Style="{StaticResource GhostButton}" Content="Refresh" Command="{Binding RefreshDashboardCommand}" />
+                <Border DockPanel.Dock="Bottom" CornerRadius="18" Background="{DynamicResource SurfaceAlt}" Padding="16" Margin="0,24,0,0" BorderBrush="{DynamicResource BorderSoft}" BorderThickness="1">
+                    <StackPanel>
+                        <TextBlock Text="Architecture" FontWeight="SemiBold" Foreground="{DynamicResource TextStrong}" />
+                        <TextBlock Text="Pure WPF / MVVM / DI / UseCase" Foreground="{DynamicResource TextMuted}" FontSize="12" TextWrapping="Wrap" Margin="0,6,0,0" />
+                    </StackPanel>
+                </Border>
+
+                <ListBox ItemsSource="{Binding Sections}" SelectedItem="{Binding SelectedSection}" />
+            </DockPanel>
+        </Border>
+
+        <Grid Grid.Row="1" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <Border Grid.Row="0" Padding="38,38,38,16" Background="{DynamicResource AppBg}">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <StackPanel>
+                        <TextBlock Text="Operations Workspace" FontSize="32" FontWeight="Bold" Foreground="{DynamicResource TextStrong}" />
+                        <TextBlock Text="Dashboard / Customers / Orders / Reports を横断する業務オペレーション画面" FontSize="15" Foreground="{DynamicResource TextMuted}" Margin="0,8,0,0" />
+                    </StackPanel>
+                    <Border Grid.Column="1" CornerRadius="18" Background="{DynamicResource Surface}" BorderBrush="{DynamicResource BorderSoft}" BorderThickness="1" Padding="16,10" VerticalAlignment="Center">
+                        <StackPanel Orientation="Horizontal">
+                            <Ellipse Width="10" Height="10" Fill="{DynamicResource Success}" Margin="0,0,8,0" />
+                            <TextBlock Text="Sample Environment" FontWeight="SemiBold" Foreground="{DynamicResource TextStrong}" />
                         </StackPanel>
                     </Border>
                 </Grid>
+            </Border>
 
-                <ScrollViewer Grid.Row="1" Grid.Column="1" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled" Padding="32,18,32,8">
-                    <StackPanel>
-                        <Grid Visibility="{Binding SelectedSection, Converter={StaticResource StringEqualsToVisibilityConverter}, ConverterParameter=Dashboard}">
+            <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
+                <StackPanel Margin="38,8,38,28">
+                    <Grid Visibility="{Binding SelectedSection, Converter={StaticResource StringEqualsToVisibilityConverter}, ConverterParameter=Dashboard}">
+                        <StackPanel>
+                            <Border Style="{StaticResource PanelCard}">
+                                <StackPanel>
+                                    <DockPanel LastChildFill="False" Margin="0,0,0,24">
+                                        <StackPanel DockPanel.Dock="Left">
+                                            <TextBlock Text="ダッシュボード" Style="{StaticResource PageTitle}" />
+                                            <TextBlock Text="業務状況のサマリーと外部APIの疎通状態" Foreground="{DynamicResource TextMuted}" Margin="0,6,0,0" />
+                                        </StackPanel>
+                                        <Button DockPanel.Dock="Right" Style="{StaticResource PrimaryButton}" Content="更新" Width="110" Command="{Binding RefreshDashboardCommand}" />
+                                    </DockPanel>
+                                    <UniformGrid Columns="4">
+                                        <Border Style="{StaticResource MetricCard}">
+                                            <StackPanel>
+                                                <TextBlock Text="有効顧客" Foreground="{DynamicResource TextMuted}" />
+                                                <TextBlock Text="{Binding ActiveCustomers}" FontSize="34" FontWeight="Bold" Foreground="{DynamicResource TextStrong}" Margin="0,8,0,0" />
+                                                <TextBlock Text="active accounts" Foreground="{DynamicResource TextMuted}" FontSize="12" />
+                                            </StackPanel>
+                                        </Border>
+                                        <Border Style="{StaticResource MetricCard}">
+                                            <StackPanel>
+                                                <TextBlock Text="今月受注" Foreground="{DynamicResource TextMuted}" />
+                                                <TextBlock Text="{Binding MonthlyOrders}" FontSize="34" FontWeight="Bold" Foreground="{DynamicResource TextStrong}" Margin="0,8,0,0" />
+                                                <TextBlock Text="orders this month" Foreground="{DynamicResource TextMuted}" FontSize="12" />
+                                            </StackPanel>
+                                        </Border>
+                                        <Border Style="{StaticResource MetricCard}">
+                                            <StackPanel>
+                                                <TextBlock Text="今月売上" Foreground="{DynamicResource TextMuted}" />
+                                                <TextBlock Text="{Binding MonthlySales, StringFormat=¥{0:N0}}" FontSize="34" FontWeight="Bold" Foreground="{DynamicResource TextStrong}" Margin="0,8,0,0" />
+                                                <TextBlock Text="sales amount" Foreground="{DynamicResource TextMuted}" FontSize="12" />
+                                            </StackPanel>
+                                        </Border>
+                                        <Border Style="{StaticResource MetricCard}" Margin="0">
+                                            <StackPanel>
+                                                <TextBlock Text="API状態" Foreground="{DynamicResource TextMuted}" />
+                                                <TextBlock Text="{Binding ApiHealth}" FontSize="18" FontWeight="Bold" Foreground="{DynamicResource Success}" TextWrapping="Wrap" Margin="0,12,0,0" />
+                                                <TextBlock Text="typed HttpClient" Foreground="{DynamicResource TextMuted}" FontSize="12" />
+                                            </StackPanel>
+                                        </Border>
+                                    </UniformGrid>
+                                </StackPanel>
+                            </Border>
+
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="2*" />
+                                    <ColumnDefinition Width="16" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <Border Grid.Column="0" Style="{StaticResource PanelCard}" Padding="24">
+                                    <StackPanel>
+                                        <TextBlock Text="実装ポイント" FontSize="18" FontWeight="SemiBold" Foreground="{DynamicResource TextStrong}" />
+                                        <TextBlock Text="ViewModel → UseCase → Repository/API/Exporter の流れで、WPF依存をPresentation層に閉じ込めています。" Foreground="{DynamicResource TextMuted}" TextWrapping="Wrap" Margin="0,8,0,0" />
+                                    </StackPanel>
+                                </Border>
+                                <Border Grid.Column="2" Style="{StaticResource PanelCard}" Padding="24">
+                                    <StackPanel>
+                                        <TextBlock Text="保存先" FontSize="18" FontWeight="SemiBold" Foreground="{DynamicResource TextStrong}" />
+                                        <TextBlock Text="%LOCALAPPDATA%\ModernBusinessWpfSample" Foreground="{DynamicResource TextMuted}" TextWrapping="Wrap" Margin="0,8,0,0" />
+                                    </StackPanel>
+                                </Border>
+                            </Grid>
+                        </StackPanel>
+                    </Grid>
+
+                    <Grid Visibility="{Binding SelectedSection, Converter={StaticResource StringEqualsToVisibilityConverter}, ConverterParameter=Customers}">
+                        <Border Style="{StaticResource PanelCard}">
                             <StackPanel>
-                                <Border CornerRadius="34" Background="{StaticResource TitleGradientBrush}" Padding="30" Margin="0,0,0,18">
+                                <DockPanel LastChildFill="False" Margin="0,0,0,22">
+                                    <StackPanel DockPanel.Dock="Left">
+                                        <TextBlock Text="顧客管理" Style="{StaticResource PageTitle}" />
+                                        <TextBlock Text="顧客マスタをローカルJSONリポジトリへ保存します" Foreground="{DynamicResource TextMuted}" Margin="0,6,0,0" />
+                                    </StackPanel>
+                                    <Button DockPanel.Dock="Right" Style="{StaticResource GhostButton}" Content="再読込" Width="110" Command="{Binding LoadCustomersCommand}" />
+                                </DockPanel>
+
+                                <Border CornerRadius="18" Background="{DynamicResource SurfaceAlt}" BorderBrush="{DynamicResource BorderSoft}" BorderThickness="1" Padding="18" Margin="0,0,0,20">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="1.2*" />
+                                            <ColumnDefinition Width="1.5*" />
+                                            <ColumnDefinition Width="1*" />
+                                            <ColumnDefinition Width="Auto" />
+                                        </Grid.ColumnDefinitions>
+                                        <StackPanel Grid.Column="0" Margin="0,0,12,0">
+                                            <TextBlock Text="顧客名" Style="{StaticResource LabelText}" />
+                                            <TextBox Style="{StaticResource InputBox}" Text="{Binding NewCustomerName, UpdateSourceTrigger=PropertyChanged}" />
+                                        </StackPanel>
+                                        <StackPanel Grid.Column="1" Margin="0,0,12,0">
+                                            <TextBlock Text="メール" Style="{StaticResource LabelText}" />
+                                            <TextBox Style="{StaticResource InputBox}" Text="{Binding NewCustomerEmail, UpdateSourceTrigger=PropertyChanged}" />
+                                        </StackPanel>
+                                        <StackPanel Grid.Column="2" Margin="0,0,12,0">
+                                            <TextBlock Text="区分" Style="{StaticResource LabelText}" />
+                                            <TextBox Style="{StaticResource InputBox}" Text="{Binding NewCustomerSegment, UpdateSourceTrigger=PropertyChanged}" />
+                                        </StackPanel>
+                                        <Button Grid.Column="3" Style="{StaticResource PrimaryButton}" Content="顧客追加" Width="120" VerticalAlignment="Bottom" Command="{Binding AddCustomerCommand}" />
+                                    </Grid>
+                                </Border>
+
+                                <Border CornerRadius="18" BorderBrush="{DynamicResource BorderSoft}" BorderThickness="1" Background="{DynamicResource Surface}" Padding="1">
+                                    <DataGrid ItemsSource="{Binding Customers}" AutoGenerateColumns="False" CanUserAddRows="False" Height="430">
+                                        <DataGrid.Columns>
+                                            <DataGridTextColumn Header="コード" Binding="{Binding Code}" Width="110" />
+                                            <DataGridTextColumn Header="顧客名" Binding="{Binding Name}" Width="*" />
+                                            <DataGridTextColumn Header="メール" Binding="{Binding Email}" Width="260" />
+                                            <DataGridTextColumn Header="区分" Binding="{Binding Segment}" Width="140" />
+                                            <DataGridCheckBoxColumn Header="有効" Binding="{Binding IsActive}" Width="80" />
+                                        </DataGrid.Columns>
+                                    </DataGrid>
+                                </Border>
+                            </StackPanel>
+                        </Border>
+                    </Grid>
+
+                    <Grid Visibility="{Binding SelectedSection, Converter={StaticResource StringEqualsToVisibilityConverter}, ConverterParameter=Orders}">
+                        <Border Style="{StaticResource PanelCard}">
+                            <StackPanel>
+                                <DockPanel LastChildFill="False" Margin="0,0,0,22">
+                                    <StackPanel DockPanel.Dock="Left">
+                                        <TextBlock Text="受注管理" Style="{StaticResource PageTitle}" />
+                                        <TextBlock Text="選択した顧客に対して受注を登録します" Foreground="{DynamicResource TextMuted}" Margin="0,6,0,0" />
+                                    </StackPanel>
+                                    <Button DockPanel.Dock="Right" Style="{StaticResource GhostButton}" Content="再読込" Width="110" Command="{Binding LoadOrdersCommand}" />
+                                </DockPanel>
+
+                                <Border CornerRadius="18" Background="{DynamicResource SurfaceAlt}" BorderBrush="{DynamicResource BorderSoft}" BorderThickness="1" Padding="18" Margin="0,0,0,20">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="2*" />
+                                            <ColumnDefinition Width="1*" />
+                                            <ColumnDefinition Width="Auto" />
+                                        </Grid.ColumnDefinitions>
+                                        <StackPanel Grid.Column="0" Margin="0,0,12,0">
+                                            <TextBlock Text="顧客" Style="{StaticResource LabelText}" />
+                                            <ComboBox ItemsSource="{Binding Customers}" SelectedItem="{Binding SelectedCustomer}" DisplayMemberPath="Name" />
+                                        </StackPanel>
+                                        <StackPanel Grid.Column="1" Margin="0,0,12,0">
+                                            <TextBlock Text="金額" Style="{StaticResource LabelText}" />
+                                            <TextBox Style="{StaticResource InputBox}" Text="{Binding NewOrderAmount, UpdateSourceTrigger=PropertyChanged}" />
+                                        </StackPanel>
+                                        <Button Grid.Column="2" Style="{StaticResource PrimaryButton}" Content="受注追加" Width="120" VerticalAlignment="Bottom" Command="{Binding AddOrderCommand}" />
+                                    </Grid>
+                                </Border>
+
+                                <Border CornerRadius="18" BorderBrush="{DynamicResource BorderSoft}" BorderThickness="1" Background="{DynamicResource Surface}" Padding="1">
+                                    <DataGrid ItemsSource="{Binding Orders}" AutoGenerateColumns="False" CanUserAddRows="False" Height="430">
+                                        <DataGrid.Columns>
+                                            <DataGridTextColumn Header="受注番号" Binding="{Binding OrderNo}" Width="150" />
+                                            <DataGridTextColumn Header="顧客名" Binding="{Binding CustomerName}" Width="*" />
+                                            <DataGridTextColumn Header="受注日" Binding="{Binding OrderedAt, StringFormat=yyyy/MM/dd HH:mm}" Width="170" />
+                                            <DataGridTextColumn Header="金額" Binding="{Binding Amount, StringFormat=¥{0:N0}}" Width="150" />
+                                            <DataGridTextColumn Header="状態" Binding="{Binding Status}" Width="130" />
+                                        </DataGrid.Columns>
+                                    </DataGrid>
+                                </Border>
+                            </StackPanel>
+                        </Border>
+                    </Grid>
+
+                    <Grid Visibility="{Binding SelectedSection, Converter={StaticResource StringEqualsToVisibilityConverter}, ConverterParameter=Reports}">
+                        <Border Style="{StaticResource PanelCard}">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="260" />
+                                </Grid.ColumnDefinitions>
+                                <StackPanel>
+                                    <TextBlock Text="レポート" Style="{StaticResource PageTitle}" />
+                                    <TextBlock Text="受注一覧をCSVとしてデスクトップに出力します。帳票基盤やExcel出力へ差し替える入口です。" Foreground="{DynamicResource TextMuted}" TextWrapping="Wrap" Margin="0,8,0,24" />
+                                    <Button Style="{StaticResource PrimaryButton}" Content="受注CSVを出力" Width="180" HorizontalAlignment="Left" Command="{Binding ExportOrdersReportCommand}" />
+                                    <TextBlock Text="{Binding ReportMessage}" Foreground="{DynamicResource TextStrong}" Margin="0,22,0,0" TextWrapping="Wrap" />
+                                </StackPanel>
+                                <Border Grid.Column="1" CornerRadius="22" Background="{DynamicResource AccentSoft}" Padding="22" Margin="26,0,0,0">
+                                    <StackPanel VerticalAlignment="Center">
+                                        <TextBlock Text="CSV" FontSize="42" FontWeight="Bold" Foreground="{DynamicResource Accent}" />
+                                        <TextBlock Text="Infrastructure層の IReportExporter を差し替えれば、PDF/Excel出力にも拡張できます。" Foreground="{DynamicResource TextMuted}" TextWrapping="Wrap" Margin="0,8,0,0" />
+                                    </StackPanel>
+                                </Border>
+                            </Grid>
+                        </Border>
+                    </Grid>
+
+                    <Grid Visibility="{Binding SelectedSection, Converter={StaticResource StringEqualsToVisibilityConverter}, ConverterParameter=Settings}">
+                        <Border Style="{StaticResource PanelCard}">
+                            <StackPanel>
+                                <TextBlock Text="設定 / アーキテクチャメモ" Style="{StaticResource PageTitle}" />
+                                <Border CornerRadius="18" Background="{DynamicResource SurfaceAlt}" BorderBrush="{DynamicResource BorderSoft}" BorderThickness="1" Padding="20" Margin="0,22,0,0">
                                     <Grid>
                                         <Grid.ColumnDefinitions>
                                             <ColumnDefinition Width="*" />
                                             <ColumnDefinition Width="Auto" />
                                         </Grid.ColumnDefinitions>
                                         <StackPanel>
-                                            <TextBlock Text="REALTIME EXECUTIVE DASHBOARD" Foreground="#DDE7FF" FontSize="12" FontWeight="Bold" />
-                                            <TextBlock Text="未来感のあるオペレーション画面へ刷新" Foreground="White" FontSize="38" FontWeight="Bold" TextWrapping="Wrap" Margin="0,9,0,0" />
-                                            <TextBlock Text="ガラス質感、ネオンアクセント、Bentoグリッドを採用し、業務アプリの堅牢さとSaaSダッシュボードの洗練を両立しました。" Foreground="#E0F2FE" FontSize="14" TextWrapping="Wrap" Width="650" Margin="0,12,0,0" />
+                                            <TextBlock Text="表示テーマ" FontSize="17" FontWeight="SemiBold" Foreground="{DynamicResource TextStrong}" />
+                                            <TextBlock Text="ライトモードとダークモードを切り替えます。" Foreground="{DynamicResource TextMuted}" TextWrapping="Wrap" Margin="0,8,0,0" />
                                         </StackPanel>
-                                        <Border Grid.Column="1" CornerRadius="26" Background="#24FFFFFF" BorderBrush="#40FFFFFF" BorderThickness="1" Padding="20" Width="230">
-                                            <StackPanel>
-                                                <TextBlock Text="2026 UI SCORE" Foreground="#CFFAFE" FontSize="12" FontWeight="SemiBold" />
-                                                <TextBlock Text="98" Foreground="White" FontSize="56" FontWeight="Bold" />
-                                                <TextBlock Text="Aurora / Glass / AI-ready" Foreground="#E0E7FF" TextWrapping="Wrap" />
-                                            </StackPanel>
-                                        </Border>
+                                        <Button x:Name="ThemeToggleButton" Grid.Column="1" Style="{StaticResource PrimaryButton}" Content="ダークモードに切替" Width="170" Margin="24,0,0,0" VerticalAlignment="Center" Click="ThemeToggleButton_Click" />
                                     </Grid>
                                 </Border>
-
-                                <UniformGrid Columns="3" Margin="0,0,0,18">
-                                    <Border Style="{StaticResource MetricCard}">
-                                        <StackPanel>
-                                            <TextBlock Text="Active Customers" Style="{StaticResource SectionEyebrow}" />
-                                            <TextBlock Text="{Binding ActiveCustomers}" Foreground="{DynamicResource TextStrong}" FontSize="40" FontWeight="Bold" Margin="0,8,0,0" />
-                                            <TextBlock Text="▲ 12.8% / month" Foreground="{DynamicResource Success}" FontWeight="SemiBold" Margin="0,8,0,0" />
-                                        </StackPanel>
-                                    </Border>
-                                    <Border Style="{StaticResource MetricCard}">
-                                        <StackPanel>
-                                            <TextBlock Text="Monthly Orders" Style="{StaticResource SectionEyebrow}" />
-                                            <TextBlock Text="{Binding MonthlyOrders}" Foreground="{DynamicResource TextStrong}" FontSize="40" FontWeight="Bold" Margin="0,8,0,0" />
-                                            <TextBlock Text="AI forecast stable" Foreground="{DynamicResource TextMuted}" Margin="0,8,0,0" />
-                                        </StackPanel>
-                                    </Border>
-                                    <Border Style="{StaticResource MetricCard}" Margin="0">
-                                        <StackPanel>
-                                            <TextBlock Text="Monthly Sales" Style="{StaticResource SectionEyebrow}" />
-                                            <TextBlock Text="{Binding MonthlySales, StringFormat=¥{0:N0}}" Foreground="{DynamicResource TextStrong}" FontSize="40" FontWeight="Bold" Margin="0,8,0,0" />
-                                            <TextBlock Text="Margin signal: premium" Foreground="{DynamicResource Warning}" FontWeight="SemiBold" Margin="0,8,0,0" />
-                                        </StackPanel>
-                                    </Border>
-                                </UniformGrid>
-
-                                <Grid>
+                                <Grid Margin="0,18,0,0">
                                     <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="1.35*" />
-                                        <ColumnDefinition Width="18" />
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="16" />
                                         <ColumnDefinition Width="*" />
                                     </Grid.ColumnDefinitions>
-                                    <Border Style="{StaticResource PanelCard}">
+                                    <Border CornerRadius="18" Background="{DynamicResource SurfaceAlt}" BorderBrush="{DynamicResource BorderSoft}" BorderThickness="1" Padding="20">
                                         <StackPanel>
-                                            <TextBlock Text="Sales pulse" Style="{StaticResource PageTitle}" FontSize="24" />
-                                            <TextBlock Text="疑似チャート領域。実データ可視化ライブラリへの差し替えを想定した余白設計です。" Foreground="{DynamicResource TextMuted}" Margin="0,8,0,18" TextWrapping="Wrap" />
-                                            <Grid Height="170">
-                                                <Grid.ColumnDefinitions>
-                                                    <ColumnDefinition /> <ColumnDefinition /> <ColumnDefinition /> <ColumnDefinition /> <ColumnDefinition /> <ColumnDefinition /> <ColumnDefinition />
-                                                </Grid.ColumnDefinitions>
-                                                <Border Grid.Column="0" Height="72" VerticalAlignment="Bottom" CornerRadius="12,12,4,4" Background="#667C3AED" Margin="4,0" />
-                                                <Border Grid.Column="1" Height="116" VerticalAlignment="Bottom" CornerRadius="12,12,4,4" Background="#668B5CF6" Margin="4,0" />
-                                                <Border Grid.Column="2" Height="96" VerticalAlignment="Bottom" CornerRadius="12,12,4,4" Background="#6606B6D4" Margin="4,0" />
-                                                <Border Grid.Column="3" Height="142" VerticalAlignment="Bottom" CornerRadius="12,12,4,4" Background="#662DD4BF" Margin="4,0" />
-                                                <Border Grid.Column="4" Height="122" VerticalAlignment="Bottom" CornerRadius="12,12,4,4" Background="#668B5CF6" Margin="4,0" />
-                                                <Border Grid.Column="5" Height="154" VerticalAlignment="Bottom" CornerRadius="12,12,4,4" Background="#6606B6D4" Margin="4,0" />
-                                                <Border Grid.Column="6" Height="132" VerticalAlignment="Bottom" CornerRadius="12,12,4,4" Background="#667C3AED" Margin="4,0" />
-                                            </Grid>
+                                            <TextBlock Text="Layering" FontSize="17" FontWeight="SemiBold" Foreground="{DynamicResource TextStrong}" />
+                                            <TextBlock Text="Desktop → Application → Domain。InfrastructureはApplicationのinterfaceを実装します。" Foreground="{DynamicResource TextMuted}" TextWrapping="Wrap" Margin="0,8,0,0" />
                                         </StackPanel>
                                     </Border>
-                                    <Border Grid.Column="2" Style="{StaticResource PanelCard}">
+                                    <Border Grid.Column="2" CornerRadius="18" Background="{DynamicResource SurfaceAlt}" BorderBrush="{DynamicResource BorderSoft}" BorderThickness="1" Padding="20">
                                         <StackPanel>
-                                            <TextBlock Text="Design diagnosis" Style="{StaticResource PageTitle}" FontSize="24" />
-                                            <TextBlock Text="以前のUIは実用的でしたが、配色・カード表現・余白が標準的で、2026年基準ではやや保守的でした。" Foreground="{DynamicResource TextMuted}" TextWrapping="Wrap" Margin="0,8,0,18" />
-                                            <Border CornerRadius="20" Background="{DynamicResource AccentSoft}" Padding="18">
-                                                <TextBlock Text="刷新後: aurora backdrop / glassmorphism / bento layout / command palette / neon status chips" Foreground="{DynamicResource TextStrong}" TextWrapping="Wrap" FontWeight="SemiBold" />
-                                            </Border>
+                                            <TextBlock Text="Data Path" FontSize="17" FontWeight="SemiBold" Foreground="{DynamicResource TextStrong}" />
+                                            <TextBlock Text="%LOCALAPPDATA%\ModernBusinessWpfSample" Foreground="{DynamicResource TextMuted}" TextWrapping="Wrap" Margin="0,8,0,0" />
                                         </StackPanel>
                                     </Border>
                                 </Grid>
                             </StackPanel>
-                        </Grid>
+                        </Border>
+                    </Grid>
+                </StackPanel>
+            </ScrollViewer>
 
-                        <Grid Visibility="{Binding SelectedSection, Converter={StaticResource StringEqualsToVisibilityConverter}, ConverterParameter=Customers}">
-                            <Grid>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="Auto" />
-                                    <RowDefinition Height="18" />
-                                    <RowDefinition Height="*" />
-                                </Grid.RowDefinitions>
-                                <Border Style="{StaticResource PanelCard}">
-                                    <Grid>
-                                        <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="*" />
-                                            <ColumnDefinition Width="18" />
-                                            <ColumnDefinition Width="340" />
-                                        </Grid.ColumnDefinitions>
-                                        <StackPanel>
-                                            <TextBlock Text="CUSTOMER INTELLIGENCE" Style="{StaticResource SectionEyebrow}" />
-                                            <TextBlock Text="顧客ハブ" Style="{StaticResource PageTitle}" Margin="0,6,0,8" />
-                                            <TextBlock Text="アクティブ顧客、セグメント、連絡先を一画面で俯瞰できるモダンなデータビューです。" Foreground="{DynamicResource TextMuted}" TextWrapping="Wrap" />
-                                        </StackPanel>
-                                        <StackPanel Grid.Column="2">
-                                            <TextBlock Text="新規顧客" Foreground="{DynamicResource TextStrong}" FontSize="18" FontWeight="Bold" Margin="0,0,0,14" />
-                                            <TextBlock Text="Name" Style="{StaticResource LabelText}" />
-                                            <TextBox Style="{StaticResource InputBox}" Text="{Binding NewCustomerName, UpdateSourceTrigger=PropertyChanged}" />
-                                            <TextBlock Text="Email" Style="{StaticResource LabelText}" Margin="0,12,0,7" />
-                                            <TextBox Style="{StaticResource InputBox}" Text="{Binding NewCustomerEmail, UpdateSourceTrigger=PropertyChanged}" />
-                                            <TextBlock Text="Segment" Style="{StaticResource LabelText}" Margin="0,12,0,7" />
-                                            <TextBox Style="{StaticResource InputBox}" Text="{Binding NewCustomerSegment, UpdateSourceTrigger=PropertyChanged}" />
-                                            <Button Style="{StaticResource PrimaryButton}" Content="顧客を追加" Command="{Binding AddCustomerCommand}" Margin="0,16,0,0" />
-                                        </StackPanel>
-                                    </Grid>
-                                </Border>
-                                <Border Grid.Row="2" Style="{StaticResource PanelCard}">
-                                    <DataGrid ItemsSource="{Binding Customers}" SelectedItem="{Binding SelectedCustomer, Mode=TwoWay}">
-                                        <DataGrid.Columns>
-                                            <DataGridTextColumn Header="CODE" Binding="{Binding Code}" Width="120" />
-                                            <DataGridTextColumn Header="NAME" Binding="{Binding Name}" Width="*" />
-                                            <DataGridTextColumn Header="EMAIL" Binding="{Binding Email}" Width="1.4*" />
-                                            <DataGridTextColumn Header="SEGMENT" Binding="{Binding Segment}" Width="130" />
-                                            <DataGridCheckBoxColumn Header="ACTIVE" Binding="{Binding IsActive}" Width="90" />
-                                        </DataGrid.Columns>
-                                    </DataGrid>
-                                </Border>
-                            </Grid>
-                        </Grid>
-
-                        <Grid Visibility="{Binding SelectedSection, Converter={StaticResource StringEqualsToVisibilityConverter}, ConverterParameter=Orders}">
-                            <Grid>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="Auto" />
-                                    <RowDefinition Height="18" />
-                                    <RowDefinition Height="*" />
-                                </Grid.RowDefinitions>
-                                <Border Style="{StaticResource PanelCard}">
-                                    <Grid>
-                                        <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="*" />
-                                            <ColumnDefinition Width="18" />
-                                            <ColumnDefinition Width="350" />
-                                        </Grid.ColumnDefinitions>
-                                        <StackPanel>
-                                            <TextBlock Text="ORDER FLOW" Style="{StaticResource SectionEyebrow}" />
-                                            <TextBlock Text="受注オペレーション" Style="{StaticResource PageTitle}" Margin="0,6,0,8" />
-                                            <TextBlock Text="受注作成とステータストラッキングを統合。余白を広く取り、現場での読みやすさを重視しました。" Foreground="{DynamicResource TextMuted}" TextWrapping="Wrap" />
-                                        </StackPanel>
-                                        <StackPanel Grid.Column="2">
-                                            <TextBlock Text="新規受注" Foreground="{DynamicResource TextStrong}" FontSize="18" FontWeight="Bold" Margin="0,0,0,14" />
-                                            <TextBlock Text="Customer" Style="{StaticResource LabelText}" />
-                                            <ComboBox ItemsSource="{Binding Customers}" SelectedItem="{Binding SelectedCustomer, Mode=TwoWay}" DisplayMemberPath="Name" />
-                                            <TextBlock Text="Amount" Style="{StaticResource LabelText}" Margin="0,12,0,7" />
-                                            <TextBox Style="{StaticResource InputBox}" Text="{Binding NewOrderAmount, UpdateSourceTrigger=PropertyChanged}" />
-                                            <Button Style="{StaticResource PrimaryButton}" Content="受注を登録" Command="{Binding AddOrderCommand}" Margin="0,16,0,0" />
-                                        </StackPanel>
-                                    </Grid>
-                                </Border>
-                                <Border Grid.Row="2" Style="{StaticResource PanelCard}">
-                                    <DataGrid ItemsSource="{Binding Orders}">
-                                        <DataGrid.Columns>
-                                            <DataGridTextColumn Header="ORDER" Binding="{Binding OrderNo}" Width="130" />
-                                            <DataGridTextColumn Header="CUSTOMER" Binding="{Binding CustomerName}" Width="*" />
-                                            <DataGridTextColumn Header="DATE" Binding="{Binding OrderedAt, StringFormat=yyyy/MM/dd}" Width="130" />
-                                            <DataGridTextColumn Header="AMOUNT" Binding="{Binding Amount, StringFormat=¥{0:N0}}" Width="140" />
-                                            <DataGridTextColumn Header="STATUS" Binding="{Binding Status}" Width="120" />
-                                        </DataGrid.Columns>
-                                    </DataGrid>
-                                </Border>
-                            </Grid>
-                        </Grid>
-
-                        <Grid Visibility="{Binding SelectedSection, Converter={StaticResource StringEqualsToVisibilityConverter}, ConverterParameter=Reports}">
-                            <Border Style="{StaticResource PanelCard}">
-                                <Grid>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="*" />
-                                        <ColumnDefinition Width="28" />
-                                        <ColumnDefinition Width="360" />
-                                    </Grid.ColumnDefinitions>
-                                    <StackPanel>
-                                        <TextBlock Text="REPORTING STUDIO" Style="{StaticResource SectionEyebrow}" />
-                                        <TextBlock Text="レポート" Style="{StaticResource PageTitle}" Margin="0,6,0,8" />
-                                        <TextBlock Text="受注一覧をCSVとして出力します。カード右側には将来的なPDF・Excel・BI連携のプレースホルダーを配置しました。" Foreground="{DynamicResource TextMuted}" TextWrapping="Wrap" Margin="0,0,0,22" />
-                                        <Button Style="{StaticResource PrimaryButton}" Content="受注CSVを出力" Width="190" HorizontalAlignment="Left" Command="{Binding ExportOrdersReportCommand}" />
-                                        <TextBlock Text="{Binding ReportMessage}" Foreground="{DynamicResource TextStrong}" Margin="0,22,0,0" TextWrapping="Wrap" />
-                                    </StackPanel>
-                                    <Border Grid.Column="2" CornerRadius="30" Background="{DynamicResource AccentSoft}" BorderBrush="{DynamicResource HeaderBadgeBorder}" BorderThickness="1" Padding="24">
-                                        <StackPanel VerticalAlignment="Center">
-                                            <TextBlock Text="CSV" FontSize="56" FontWeight="Bold" Foreground="{DynamicResource TextStrong}" />
-                                            <TextBlock Text="Exporterを差し替えるだけで帳票基盤を拡張できます。" Foreground="{DynamicResource TextMuted}" TextWrapping="Wrap" Margin="0,10,0,0" />
-                                        </StackPanel>
-                                    </Border>
-                                </Grid>
-                            </Border>
-                        </Grid>
-
-                        <Grid Visibility="{Binding SelectedSection, Converter={StaticResource StringEqualsToVisibilityConverter}, ConverterParameter=Settings}">
-                            <Border Style="{StaticResource PanelCard}">
-                                <StackPanel>
-                                    <TextBlock Text="SYSTEM SETTINGS" Style="{StaticResource SectionEyebrow}" />
-                                    <TextBlock Text="設定 / アーキテクチャメモ" Style="{StaticResource PageTitle}" Margin="0,6,0,18" />
-                                    <Border CornerRadius="24" Background="{DynamicResource SurfaceAlt}" BorderBrush="{DynamicResource BorderSoft}" BorderThickness="1" Padding="22">
-                                        <Grid>
-                                            <Grid.ColumnDefinitions>
-                                                <ColumnDefinition Width="*" />
-                                                <ColumnDefinition Width="Auto" />
-                                            </Grid.ColumnDefinitions>
-                                            <StackPanel>
-                                                <TextBlock Text="表示テーマ" FontSize="18" FontWeight="Bold" Foreground="{DynamicResource TextStrong}" />
-                                                <TextBlock Text="2026ダークとクリーンライトを切り替えます。" Foreground="{DynamicResource TextMuted}" TextWrapping="Wrap" Margin="0,8,0,0" />
-                                            </StackPanel>
-                                            <Button x:Name="ThemeToggleButton" Grid.Column="1" Style="{StaticResource PrimaryButton}" Content="ライトモードに切替" Width="180" Margin="24,0,0,0" VerticalAlignment="Center" Click="ThemeToggleButton_Click" />
-                                        </Grid>
-                                    </Border>
-                                    <Grid Margin="0,18,0,0">
-                                        <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="*" />
-                                            <ColumnDefinition Width="18" />
-                                            <ColumnDefinition Width="*" />
-                                        </Grid.ColumnDefinitions>
-                                        <Border CornerRadius="24" Background="{DynamicResource SurfaceAlt}" BorderBrush="{DynamicResource BorderSoft}" BorderThickness="1" Padding="22">
-                                            <StackPanel>
-                                                <TextBlock Text="Layering" FontSize="18" FontWeight="Bold" Foreground="{DynamicResource TextStrong}" />
-                                                <TextBlock Text="Desktop → Application → Domain。InfrastructureはApplicationのinterfaceを実装します。" Foreground="{DynamicResource TextMuted}" TextWrapping="Wrap" Margin="0,8,0,0" />
-                                            </StackPanel>
-                                        </Border>
-                                        <Border Grid.Column="2" CornerRadius="24" Background="{DynamicResource SurfaceAlt}" BorderBrush="{DynamicResource BorderSoft}" BorderThickness="1" Padding="22">
-                                            <StackPanel>
-                                                <TextBlock Text="Data Path" FontSize="18" FontWeight="Bold" Foreground="{DynamicResource TextStrong}" />
-                                                <TextBlock Text="%LOCALAPPDATA%\ModernBusinessWpfSample" Foreground="{DynamicResource TextMuted}" TextWrapping="Wrap" Margin="0,8,0,0" />
-                                            </StackPanel>
-                                        </Border>
-                                    </Grid>
-                                </StackPanel>
-                            </Border>
-                        </Grid>
+            <Border Grid.Row="2" Background="{DynamicResource AppBg}" Padding="38,0,38,26">
+                <Border CornerRadius="16" Background="{DynamicResource Surface}" BorderBrush="{DynamicResource BorderSoft}" BorderThickness="1" Padding="16,11">
+                    <StackPanel Orientation="Horizontal">
+                        <Ellipse Width="8" Height="8" Fill="{DynamicResource Success}" Margin="0,0,10,0" />
+                        <TextBlock Text="{Binding StatusMessage}" Foreground="{DynamicResource TextMuted}" />
                     </StackPanel>
-                </ScrollViewer>
-
-                <Border Grid.Row="2" Grid.Column="1" Background="Transparent" Padding="32,0,32,24">
-                    <Border CornerRadius="22" Background="{DynamicResource Surface}" BorderBrush="{DynamicResource BorderSoft}" BorderThickness="1" Padding="18,12">
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="Auto" />
-                                <ColumnDefinition Width="*" />
-                                <ColumnDefinition Width="Auto" />
-                            </Grid.ColumnDefinitions>
-                            <Ellipse Width="10" Height="10" Fill="{DynamicResource Success}" Margin="0,0,12,0" />
-                            <TextBlock Grid.Column="1" Text="{Binding StatusMessage}" Foreground="{DynamicResource TextMuted}" />
-                            <TextBlock Grid.Column="2" Text="Secure session • WPF desktop" Foreground="{DynamicResource TextMuted}" FontSize="12" />
-                        </Grid>
-                    </Border>
                 </Border>
-            </Grid>
-        </Border>
+            </Border>
+        </Grid>
     </Grid>
 </Window>
