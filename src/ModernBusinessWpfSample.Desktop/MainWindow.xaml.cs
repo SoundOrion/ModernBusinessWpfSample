@@ -1,15 +1,15 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Interop;
-using System.Windows.Controls;
 using System.Windows.Media;
 using ModernBusinessWpfSample.Desktop.ViewModels;
 
 namespace ModernBusinessWpfSample.Desktop;
 
-public partial class MainWindow : global::Wpf.Ui.Controls.FluentWindow
+public partial class MainWindow : Window
 {
     public MainWindow(MainViewModel viewModel)
     {
@@ -17,6 +17,8 @@ public partial class MainWindow : global::Wpf.Ui.Controls.FluentWindow
         DataContext = viewModel;
 
         SourceInitialized += (_, _) => ApplyNativeTitleBarColors();
+        StateChanged += (_, _) => UpdateMaximizeRestoreButton();
+        UpdateMaximizeRestoreButton();
     }
 
     private void AppHeader_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -26,7 +28,7 @@ public partial class MainWindow : global::Wpf.Ui.Controls.FluentWindow
             return;
         }
 
-        // Do not start window dragging when clicking header actions such as the close button.
+        // Do not start window dragging when clicking header actions such as the window buttons.
         if (e.OriginalSource is DependencyObject source && FindAncestor<Button>(source) is not null)
         {
             return;
@@ -34,9 +36,7 @@ public partial class MainWindow : global::Wpf.Ui.Controls.FluentWindow
 
         if (e.ClickCount == 2)
         {
-            WindowState = WindowState == WindowState.Maximized
-                ? WindowState.Normal
-                : WindowState.Maximized;
+            ToggleMaximizeRestore();
             return;
         }
 
@@ -50,10 +50,37 @@ public partial class MainWindow : global::Wpf.Ui.Controls.FluentWindow
         }
     }
 
+    private void MinimizeButton_Click(object sender, RoutedEventArgs e)
+    {
+        WindowState = WindowState.Minimized;
+    }
+
+    private void MaximizeRestoreButton_Click(object sender, RoutedEventArgs e)
+    {
+        ToggleMaximizeRestore();
+    }
 
     private void CloseButton_Click(object sender, RoutedEventArgs e)
     {
         Close();
+    }
+
+    private void ToggleMaximizeRestore()
+    {
+        WindowState = WindowState == WindowState.Maximized
+            ? WindowState.Normal
+            : WindowState.Maximized;
+    }
+
+    private void UpdateMaximizeRestoreButton()
+    {
+        if (MaximizeRestoreButton is null)
+        {
+            return;
+        }
+
+        MaximizeRestoreButton.Content = WindowState == WindowState.Maximized ? "❐" : "□";
+        MaximizeRestoreButton.ToolTip = WindowState == WindowState.Maximized ? "元に戻す" : "最大化";
     }
 
     private static T? FindAncestor<T>(DependencyObject current) where T : DependencyObject
