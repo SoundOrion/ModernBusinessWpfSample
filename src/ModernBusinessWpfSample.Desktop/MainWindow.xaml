@@ -21,29 +21,29 @@
     <Window.Resources>
         <conv:StringEqualsToVisibilityConverter x:Key="StringEqualsToVisibilityConverter" />
 
-        <SolidColorBrush x:Key="AppBg" Color="#F3F6FB" />
+        <SolidColorBrush x:Key="AppBg" Color="#F1F8F4" />
         <SolidColorBrush x:Key="Surface" Color="#FFFFFF" />
-        <SolidColorBrush x:Key="SurfaceAlt" Color="#F8FAFC" />
-        <SolidColorBrush x:Key="BorderSoft" Color="#E2E8F0" />
-        <SolidColorBrush x:Key="TextStrong" Color="#162033" />
-        <SolidColorBrush x:Key="TextMuted" Color="#64748B" />
-        <SolidColorBrush x:Key="Accent" Color="#2563EB" />
-        <SolidColorBrush x:Key="AccentHover" Color="#1D4ED8" />
-        <SolidColorBrush x:Key="AccentSoft" Color="#EAF1FF" />
-        <SolidColorBrush x:Key="SuccessSoft" Color="#ECFDF3" />
-        <SolidColorBrush x:Key="Success" Color="#039855" />
-        <SolidColorBrush x:Key="TitleBarBg" Color="#0F172A" />
-        <SolidColorBrush x:Key="TitleBarBg2" Color="#1E3A8A" />
-        <SolidColorBrush x:Key="TitleBarBorder" Color="#1D4ED8" />
+        <SolidColorBrush x:Key="SurfaceAlt" Color="#F7FBF8" />
+        <SolidColorBrush x:Key="BorderSoft" Color="#D6E9DD" />
+        <SolidColorBrush x:Key="TextStrong" Color="#123326" />
+        <SolidColorBrush x:Key="TextMuted" Color="#5D776B" />
+        <SolidColorBrush x:Key="Accent" Color="#00843D" />
+        <SolidColorBrush x:Key="AccentHover" Color="#006B31" />
+        <SolidColorBrush x:Key="AccentSoft" Color="#E5F4EB" />
+        <SolidColorBrush x:Key="SuccessSoft" Color="#E6F7ED" />
+        <SolidColorBrush x:Key="Success" Color="#009A44" />
+        <SolidColorBrush x:Key="TitleBarBg" Color="#004831" />
+        <SolidColorBrush x:Key="TitleBarBg2" Color="#00843D" />
+        <SolidColorBrush x:Key="TitleBarBorder" Color="#006B31" />
         <SolidColorBrush x:Key="TitleBarText" Color="#FFFFFF" />
-        <SolidColorBrush x:Key="TitleBarSubtle" Color="#BFDBFE" />
-        <SolidColorBrush x:Key="NavigationHover" Color="#F1F5F9" />
-        <SolidColorBrush x:Key="RowBorder" Color="#EEF2F7" />
-        <SolidColorBrush x:Key="HeaderIconBg" Color="#DBEAFE" />
-        <SolidColorBrush x:Key="HeaderBadgeBg" Color="#153E75" />
-        <SolidColorBrush x:Key="HeaderUserBg" Color="#172554" />
-        <SolidColorBrush x:Key="HeaderBadgeBorder" Color="#3B82F6" />
-        <SolidColorBrush x:Key="HeaderOnline" Color="#22C55E" />
+        <SolidColorBrush x:Key="TitleBarSubtle" Color="#BDEFD1" />
+        <SolidColorBrush x:Key="NavigationHover" Color="#EDF8F1" />
+        <SolidColorBrush x:Key="RowBorder" Color="#E4F1E9" />
+        <SolidColorBrush x:Key="HeaderIconBg" Color="#D8F3E3" />
+        <SolidColorBrush x:Key="HeaderBadgeBg" Color="#006B31" />
+        <SolidColorBrush x:Key="HeaderUserBg" Color="#00523A" />
+        <SolidColorBrush x:Key="HeaderBadgeBorder" Color="#2FBF6A" />
+        <SolidColorBrush x:Key="HeaderOnline" Color="#2FBF6A" />
         <SolidColorBrush x:Key="HeaderOnlineText" Color="#DCFCE7" />
 
         <Style x:Key="PageTitle" TargetType="TextBlock">
@@ -74,7 +74,7 @@
             <Setter Property="Margin" Value="0,0,0,16" />
             <Setter Property="Effect">
                 <Setter.Value>
-                    <DropShadowEffect BlurRadius="22" ShadowDepth="4" Opacity="0.07" Color="#64748B" />
+                    <DropShadowEffect BlurRadius="22" ShadowDepth="4" Opacity="0.07" Color="#5D776B" />
                 </Setter.Value>
             </Setter>
         </Style>
@@ -306,8 +306,8 @@
         <Border Grid.Row="0" Grid.ColumnSpan="2" BorderBrush="{DynamicResource TitleBarBorder}" BorderThickness="0,0,0,1" Padding="22,0" MouseLeftButtonDown="AppHeader_MouseLeftButtonDown">
             <Border.Background>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
-                    <GradientStop x:Name="TitleGradientStart" Color="#0F172A" Offset="0" />
-                    <GradientStop x:Name="TitleGradientEnd" Color="#1E3A8A" Offset="1" />
+                    <GradientStop x:Name="TitleGradientStart" Color="#004831" Offset="0" />
+                    <GradientStop x:Name="TitleGradientEnd" Color="#00843D" Offset="1" />
                 </LinearGradientBrush>
             </Border.Background>
             <Grid>
