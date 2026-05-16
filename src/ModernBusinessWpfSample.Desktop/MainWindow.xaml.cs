@@ -145,10 +145,7 @@ public partial class MainWindow : Window
 
     private void SetResourceColor(string resourceKey, Color color)
     {
-        if (Resources[resourceKey] is SolidColorBrush brush)
-        {
-            brush.Color = color;
-        }
+        Resources[resourceKey] = new SolidColorBrush(color);
     }
 
     private void StatusMessageIfPossible(string message)
