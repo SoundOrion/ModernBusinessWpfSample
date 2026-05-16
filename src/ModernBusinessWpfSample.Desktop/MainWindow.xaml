@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:shell="clr-namespace:System.Windows.Shell;assembly=PresentationFramework"
         xmlns:conv="clr-namespace:ModernBusinessWpfSample.Desktop.Converters"
-        Title="Modern Business WPF Sample"
+        Title="Sales Operations Console"
         Width="1280" Height="820"
         MinWidth="1100" MinHeight="720"
         WindowStartupLocation="CenterScreen"
@@ -52,6 +52,12 @@
             <Setter Property="Foreground" Value="{DynamicResource TextStrong}" />
         </Style>
 
+        <Style x:Key="SectionTitle" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="17" />
+            <Setter Property="FontWeight" Value="SemiBold" />
+            <Setter Property="Foreground" Value="{DynamicResource TextStrong}" />
+        </Style>
+
         <Style x:Key="LabelText" TargetType="TextBlock">
             <Setter Property="FontSize" Value="12" />
             <Setter Property="FontWeight" Value="SemiBold" />
@@ -60,26 +66,31 @@
         </Style>
 
         <Style x:Key="PanelCard" TargetType="Border">
-            <Setter Property="CornerRadius" Value="24" />
+            <Setter Property="CornerRadius" Value="22" />
             <Setter Property="Background" Value="{DynamicResource Surface}" />
             <Setter Property="BorderBrush" Value="{DynamicResource BorderSoft}" />
             <Setter Property="BorderThickness" Value="1" />
-            <Setter Property="Padding" Value="26" />
-            <Setter Property="Margin" Value="0,0,0,18" />
+            <Setter Property="Padding" Value="24" />
+            <Setter Property="Margin" Value="0,0,0,16" />
             <Setter Property="Effect">
                 <Setter.Value>
-                    <DropShadowEffect BlurRadius="24" ShadowDepth="4" Opacity="0.08" Color="#64748B" />
+                    <DropShadowEffect BlurRadius="22" ShadowDepth="4" Opacity="0.07" Color="#64748B" />
                 </Setter.Value>
             </Setter>
         </Style>
 
-        <Style x:Key="MetricCard" TargetType="Border">
-            <Setter Property="CornerRadius" Value="20" />
-            <Setter Property="Background" Value="{DynamicResource Surface}" />
+        <Style x:Key="FlatCard" TargetType="Border">
+            <Setter Property="CornerRadius" Value="18" />
+            <Setter Property="Background" Value="{DynamicResource SurfaceAlt}" />
             <Setter Property="BorderBrush" Value="{DynamicResource BorderSoft}" />
             <Setter Property="BorderThickness" Value="1" />
-            <Setter Property="Padding" Value="22" />
-            <Setter Property="Margin" Value="0,0,14,0" />
+            <Setter Property="Padding" Value="18" />
+        </Style>
+
+        <Style x:Key="MetricCard" TargetType="Border" BasedOn="{StaticResource FlatCard}">
+            <Setter Property="Background" Value="{DynamicResource Surface}" />
+            <Setter Property="Padding" Value="18" />
+            <Setter Property="Margin" Value="0,0,12,0" />
         </Style>
 
         <Style x:Key="InputBox" TargetType="TextBox">
@@ -109,8 +120,8 @@
 
         <Style TargetType="ComboBox">
             <Setter Property="Height" Value="42" />
+            <Setter Property="Padding" Value="12,0" />
             <Setter Property="FontSize" Value="14" />
-            <Setter Property="Padding" Value="10,0" />
             <Setter Property="Foreground" Value="{DynamicResource TextStrong}" />
             <Setter Property="Background" Value="{DynamicResource Surface}" />
             <Setter Property="BorderBrush" Value="{DynamicResource BorderSoft}" />
@@ -120,76 +131,23 @@
         <Style x:Key="PrimaryButton" TargetType="Button">
             <Setter Property="Height" Value="42" />
             <Setter Property="Padding" Value="18,0" />
-            <Setter Property="FontSize" Value="14" />
             <Setter Property="FontWeight" Value="SemiBold" />
             <Setter Property="Foreground" Value="White" />
             <Setter Property="Background" Value="{DynamicResource Accent}" />
-            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="BorderBrush" Value="{DynamicResource Accent}" />
             <Setter Property="Cursor" Value="Hand" />
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
-                        <Border x:Name="Root" Background="{TemplateBinding Background}" CornerRadius="12" Padding="{TemplateBinding Padding}">
+                        <Border x:Name="Root" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1" CornerRadius="13" Padding="{TemplateBinding Padding}">
                             <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
                         </Border>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsMouseOver" Value="True">
                                 <Setter TargetName="Root" Property="Background" Value="{DynamicResource AccentHover}" />
                             </Trigger>
-                            <Trigger Property="IsPressed" Value="True">
-                                <Setter TargetName="Root" Property="Opacity" Value="0.86" />
-                            </Trigger>
-                        </ControlTemplate.Triggers>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
-
-
-        <Style x:Key="TitleBarButton" TargetType="Button">
-            <Setter Property="Width" Value="36" />
-            <Setter Property="Height" Value="36" />
-            <Setter Property="Foreground" Value="White" />
-            <Setter Property="Background" Value="Transparent" />
-            <Setter Property="BorderThickness" Value="0" />
-            <Setter Property="FontSize" Value="15" />
-            <Setter Property="FontWeight" Value="SemiBold" />
-            <Setter Property="Cursor" Value="Hand" />
-            <Setter Property="shell:WindowChrome.IsHitTestVisibleInChrome" Value="True" />
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="Button">
-                        <Border x:Name="Root" Background="{TemplateBinding Background}" CornerRadius="10">
-                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
-                        </Border>
-                        <ControlTemplate.Triggers>
-                            <Trigger Property="IsMouseOver" Value="True">
-                                <Setter TargetName="Root" Property="Background" Value="#2563EB" />
-                            </Trigger>
-                            <Trigger Property="IsPressed" Value="True">
-                                <Setter TargetName="Root" Property="Opacity" Value="0.78" />
-                            </Trigger>
-                        </ControlTemplate.Triggers>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
-
-        <Style x:Key="TitleBarCloseButton" TargetType="Button" BasedOn="{StaticResource TitleBarButton}">
-            <Setter Property="FontSize" Value="20" />
-            <Setter Property="ToolTip" Value="閉じる" />
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="Button">
-                        <Border x:Name="Root" Background="{TemplateBinding Background}" CornerRadius="10">
-                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,-2,0,0" />
-                        </Border>
-                        <ControlTemplate.Triggers>
-                            <Trigger Property="IsMouseOver" Value="True">
-                                <Setter TargetName="Root" Property="Background" Value="#DC2626" />
-                            </Trigger>
-                            <Trigger Property="IsPressed" Value="True">
-                                <Setter TargetName="Root" Property="Background" Value="#991B1B" />
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter Property="Opacity" Value="0.55" />
                             </Trigger>
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
@@ -199,24 +157,48 @@
 
         <Style x:Key="GhostButton" TargetType="Button" BasedOn="{StaticResource PrimaryButton}">
             <Setter Property="Foreground" Value="{DynamicResource TextStrong}" />
-            <Setter Property="Background" Value="{DynamicResource SurfaceAlt}" />
+            <Setter Property="Background" Value="{DynamicResource Surface}" />
             <Setter Property="BorderBrush" Value="{DynamicResource BorderSoft}" />
-            <Setter Property="BorderThickness" Value="1" />
+        </Style>
+
+        <Style x:Key="TitleBarButton" TargetType="Button">
+            <Setter Property="Width" Value="38" />
+            <Setter Property="Height" Value="38" />
+            <Setter Property="Margin" Value="2,0" />
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="Foreground" Value="{DynamicResource TitleBarText}" />
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="BorderBrush" Value="Transparent" />
+            <Setter Property="Cursor" Value="Hand" />
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
-                        <Border x:Name="Root" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="12" Padding="{TemplateBinding Padding}">
+                        <Border x:Name="Root" Background="{TemplateBinding Background}" CornerRadius="10">
                             <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
                         </Border>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsMouseOver" Value="True">
-                                <Setter TargetName="Root" Property="Background" Value="{DynamicResource AccentSoft}" />
-                                <Setter Property="Foreground" Value="{DynamicResource Accent}" />
+                                <Setter TargetName="Root" Property="Background" Value="{DynamicResource HeaderBadgeBg}" />
                             </Trigger>
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
+        </Style>
+
+        <Style x:Key="TitleBarCloseButton" TargetType="Button" BasedOn="{StaticResource TitleBarButton}">
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#DC2626" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style x:Key="Badge" TargetType="Border">
+            <Setter Property="CornerRadius" Value="12" />
+            <Setter Property="Background" Value="{DynamicResource AccentSoft}" />
+            <Setter Property="Padding" Value="10,5" />
+            <Setter Property="HorizontalAlignment" Value="Left" />
         </Style>
 
         <Style TargetType="ListBox">
@@ -302,7 +284,10 @@
             <Setter Property="BorderThickness" Value="0,0,0,1" />
             <Style.Triggers>
                 <Trigger Property="IsMouseOver" Value="True">
-                    <Setter Property="Background" Value="{DynamicResource SurfaceAlt}" />
+                    <Setter Property="Background" Value="{DynamicResource AccentSoft}" />
+                </Trigger>
+                <Trigger Property="IsSelected" Value="True">
+                    <Setter Property="Background" Value="{DynamicResource AccentSoft}" />
                 </Trigger>
             </Style.Triggers>
         </Style>
@@ -314,11 +299,10 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="280" />
+            <ColumnDefinition Width="260" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
 
-        <!-- Pure WPF custom chrome. The header acts as the drag surface and hosts window controls. -->
         <Border Grid.Row="0" Grid.ColumnSpan="2" BorderBrush="{DynamicResource TitleBarBorder}" BorderThickness="0,0,0,1" Padding="22,0" MouseLeftButtonDown="AppHeader_MouseLeftButtonDown">
             <Border.Background>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
@@ -336,10 +320,7 @@
                     <Border Width="38" Height="38" CornerRadius="13" Background="{DynamicResource HeaderIconBg}" Margin="0,0,14,0">
                         <TextBlock Text="業" FontSize="16" FontWeight="Bold" Foreground="{DynamicResource Accent}" HorizontalAlignment="Center" VerticalAlignment="Center" />
                     </Border>
-                    <StackPanel>
-                        <TextBlock Text="Modern Business WPF Sample" FontSize="19" FontWeight="SemiBold" Foreground="{DynamicResource TitleBarText}" />
-                        <TextBlock Text="Pure WPF / MVVM / DI / Clean-ish Layers" FontSize="12" Foreground="{DynamicResource TitleBarSubtle}" />
-                    </StackPanel>
+                    <TextBlock Text="Sales Operations Console" FontSize="20" FontWeight="SemiBold" Foreground="{DynamicResource TitleBarText}" VerticalAlignment="Center" />
                 </StackPanel>
 
                 <StackPanel Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center">
@@ -361,17 +342,16 @@
 
         <Border Grid.Row="1" Grid.Column="0" Background="{DynamicResource Surface}" Padding="24" BorderBrush="{DynamicResource BorderSoft}" BorderThickness="0,0,1,0">
             <DockPanel LastChildFill="True">
-                <StackPanel DockPanel.Dock="Top" Margin="0,18,0,28">
+                <StackPanel DockPanel.Dock="Top" Margin="0,18,0,26">
                     <Border Width="48" Height="48" CornerRadius="16" Background="{DynamicResource AccentSoft}" HorizontalAlignment="Left">
-                        <TextBlock Text="業" FontSize="20" FontWeight="Bold" Foreground="{DynamicResource Accent}" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        <TextBlock Text="BH" FontSize="16" FontWeight="Bold" Foreground="{DynamicResource Accent}" HorizontalAlignment="Center" VerticalAlignment="Center" />
                     </Border>
                     <TextBlock Text="Business Hub" FontSize="24" FontWeight="Bold" Foreground="{DynamicResource TextStrong}" Margin="0,16,0,0" />
-                    <TextBlock Text="Sales operations sample" Foreground="{DynamicResource TextMuted}" Margin="0,6,0,0" />
                 </StackPanel>
 
                 <Border DockPanel.Dock="Bottom" CornerRadius="18" Background="{DynamicResource SurfaceAlt}" Padding="16" Margin="0,24,0,0" BorderBrush="{DynamicResource BorderSoft}" BorderThickness="1">
                     <StackPanel>
-                        <TextBlock Text="Architecture" FontWeight="SemiBold" Foreground="{DynamicResource TextStrong}" />
+                        <TextBlock Text="Sample Stack" FontWeight="SemiBold" Foreground="{DynamicResource TextStrong}" />
                         <TextBlock Text="Pure WPF / MVVM / DI / UseCase" Foreground="{DynamicResource TextMuted}" FontSize="12" TextWrapping="Wrap" Margin="0,6,0,0" />
                     </StackPanel>
                 </Border>
@@ -382,40 +362,20 @@
 
         <Grid Grid.Row="1" Grid.Column="1">
             <Grid.RowDefinitions>
-                <RowDefinition Height="Auto" />
                 <RowDefinition Height="*" />
                 <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
 
-            <Border Grid.Row="0" Padding="38,38,38,16" Background="{DynamicResource AppBg}">
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*" />
-                        <ColumnDefinition Width="Auto" />
-                    </Grid.ColumnDefinitions>
-                    <StackPanel>
-                        <TextBlock Text="Operations Workspace" FontSize="32" FontWeight="Bold" Foreground="{DynamicResource TextStrong}" />
-                        <TextBlock Text="Dashboard / Customers / Orders / Reports を横断する業務オペレーション画面" FontSize="15" Foreground="{DynamicResource TextMuted}" Margin="0,8,0,0" />
-                    </StackPanel>
-                    <Border Grid.Column="1" CornerRadius="18" Background="{DynamicResource Surface}" BorderBrush="{DynamicResource BorderSoft}" BorderThickness="1" Padding="16,10" VerticalAlignment="Center">
-                        <StackPanel Orientation="Horizontal">
-                            <Ellipse Width="10" Height="10" Fill="{DynamicResource Success}" Margin="0,0,8,0" />
-                            <TextBlock Text="Sample Environment" FontWeight="SemiBold" Foreground="{DynamicResource TextStrong}" />
-                        </StackPanel>
-                    </Border>
-                </Grid>
-            </Border>
-
-            <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
-                <StackPanel Margin="38,8,38,28">
+            <ScrollViewer Grid.Row="0" VerticalScrollBarVisibility="Auto">
+                <StackPanel Margin="38,30,38,28">
                     <Grid Visibility="{Binding SelectedSection, Converter={StaticResource StringEqualsToVisibilityConverter}, ConverterParameter=Dashboard}">
                         <StackPanel>
                             <Border Style="{StaticResource PanelCard}">
                                 <StackPanel>
-                                    <DockPanel LastChildFill="False" Margin="0,0,0,24">
+                                    <DockPanel LastChildFill="False" Margin="0,0,0,20">
                                         <StackPanel DockPanel.Dock="Left">
                                             <TextBlock Text="ダッシュボード" Style="{StaticResource PageTitle}" />
-                                            <TextBlock Text="業務状況のサマリーと外部APIの疎通状態" Foreground="{DynamicResource TextMuted}" Margin="0,6,0,0" />
+                                            <TextBlock Text="業務状況のサマリーと今日の確認事項" Foreground="{DynamicResource TextMuted}" Margin="0,6,0,0" />
                                         </StackPanel>
                                         <Button DockPanel.Dock="Right" Style="{StaticResource PrimaryButton}" Content="更新" Width="110" Command="{Binding RefreshDashboardCommand}" />
                                     </DockPanel>
@@ -423,28 +383,28 @@
                                         <Border Style="{StaticResource MetricCard}">
                                             <StackPanel>
                                                 <TextBlock Text="有効顧客" Foreground="{DynamicResource TextMuted}" />
-                                                <TextBlock Text="{Binding ActiveCustomers}" FontSize="34" FontWeight="Bold" Foreground="{DynamicResource TextStrong}" Margin="0,8,0,0" />
+                                                <TextBlock Text="{Binding ActiveCustomers}" FontSize="32" FontWeight="Bold" Foreground="{DynamicResource TextStrong}" Margin="0,6,0,0" />
                                                 <TextBlock Text="active accounts" Foreground="{DynamicResource TextMuted}" FontSize="12" />
                                             </StackPanel>
                                         </Border>
                                         <Border Style="{StaticResource MetricCard}">
                                             <StackPanel>
                                                 <TextBlock Text="今月受注" Foreground="{DynamicResource TextMuted}" />
-                                                <TextBlock Text="{Binding MonthlyOrders}" FontSize="34" FontWeight="Bold" Foreground="{DynamicResource TextStrong}" Margin="0,8,0,0" />
+                                                <TextBlock Text="{Binding MonthlyOrders}" FontSize="32" FontWeight="Bold" Foreground="{DynamicResource TextStrong}" Margin="0,6,0,0" />
                                                 <TextBlock Text="orders this month" Foreground="{DynamicResource TextMuted}" FontSize="12" />
                                             </StackPanel>
                                         </Border>
                                         <Border Style="{StaticResource MetricCard}">
                                             <StackPanel>
                                                 <TextBlock Text="今月売上" Foreground="{DynamicResource TextMuted}" />
-                                                <TextBlock Text="{Binding MonthlySales, StringFormat=¥{0:N0}}" FontSize="34" FontWeight="Bold" Foreground="{DynamicResource TextStrong}" Margin="0,8,0,0" />
+                                                <TextBlock Text="{Binding MonthlySales, StringFormat=¥{0:N0}}" FontSize="32" FontWeight="Bold" Foreground="{DynamicResource TextStrong}" Margin="0,6,0,0" />
                                                 <TextBlock Text="sales amount" Foreground="{DynamicResource TextMuted}" FontSize="12" />
                                             </StackPanel>
                                         </Border>
                                         <Border Style="{StaticResource MetricCard}" Margin="0">
                                             <StackPanel>
                                                 <TextBlock Text="API状態" Foreground="{DynamicResource TextMuted}" />
-                                                <TextBlock Text="{Binding ApiHealth}" FontSize="18" FontWeight="Bold" Foreground="{DynamicResource Success}" TextWrapping="Wrap" Margin="0,12,0,0" />
+                                                <TextBlock Text="{Binding ApiHealth}" FontSize="17" FontWeight="Bold" Foreground="{DynamicResource Success}" TextWrapping="Wrap" Margin="0,10,0,0" />
                                                 <TextBlock Text="typed HttpClient" Foreground="{DynamicResource TextMuted}" FontSize="12" />
                                             </StackPanel>
                                         </Border>
@@ -454,74 +414,127 @@
 
                             <Grid>
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="2*" />
+                                    <ColumnDefinition Width="1.4*" />
                                     <ColumnDefinition Width="16" />
                                     <ColumnDefinition Width="*" />
                                 </Grid.ColumnDefinitions>
-                                <Border Grid.Column="0" Style="{StaticResource PanelCard}" Padding="24">
+                                <Border Grid.Column="0" Style="{StaticResource PanelCard}">
                                     <StackPanel>
-                                        <TextBlock Text="実装ポイント" FontSize="18" FontWeight="SemiBold" Foreground="{DynamicResource TextStrong}" />
-                                        <TextBlock Text="ViewModel → UseCase → Repository/API/Exporter の流れで、WPF依存をPresentation層に閉じ込めています。" Foreground="{DynamicResource TextMuted}" TextWrapping="Wrap" Margin="0,8,0,0" />
+                                        <TextBlock Text="最近の受注" Style="{StaticResource SectionTitle}" />
+                                        <TextBlock Text="直近5件の受注をすぐ確認できます。" Foreground="{DynamicResource TextMuted}" Margin="0,6,0,14" />
+                                        <DataGrid ItemsSource="{Binding RecentOrders}" AutoGenerateColumns="False" CanUserAddRows="False" Height="250">
+                                            <DataGrid.Columns>
+                                                <DataGridTextColumn Header="受注番号" Binding="{Binding OrderNo}" Width="130" />
+                                                <DataGridTextColumn Header="顧客" Binding="{Binding CustomerName}" Width="*" />
+                                                <DataGridTextColumn Header="金額" Binding="{Binding Amount, StringFormat=¥{0:N0}}" Width="130" />
+                                                <DataGridTextColumn Header="状態" Binding="{Binding Status}" Width="110" />
+                                            </DataGrid.Columns>
+                                        </DataGrid>
                                     </StackPanel>
                                 </Border>
-                                <Border Grid.Column="2" Style="{StaticResource PanelCard}" Padding="24">
-                                    <StackPanel>
-                                        <TextBlock Text="保存先" FontSize="18" FontWeight="SemiBold" Foreground="{DynamicResource TextStrong}" />
-                                        <TextBlock Text="%LOCALAPPDATA%\ModernBusinessWpfSample" Foreground="{DynamicResource TextMuted}" TextWrapping="Wrap" Margin="0,8,0,0" />
-                                    </StackPanel>
-                                </Border>
+                                <StackPanel Grid.Column="2">
+                                    <Border Style="{StaticResource PanelCard}" Padding="20">
+                                        <StackPanel>
+                                            <TextBlock Text="今日のタスク" Style="{StaticResource SectionTitle}" />
+                                            <TextBlock Text="・新規顧客の入力内容を確認" Foreground="{DynamicResource TextStrong}" Margin="0,12,0,0" />
+                                            <TextBlock Text="・月次CSVの出力先を確認" Foreground="{DynamicResource TextStrong}" Margin="0,8,0,0" />
+                                            <TextBlock Text="・API疎通結果を記録" Foreground="{DynamicResource TextStrong}" Margin="0,8,0,0" />
+                                        </StackPanel>
+                                    </Border>
+                                    <Border Style="{StaticResource PanelCard}" Padding="20">
+                                        <StackPanel>
+                                            <TextBlock Text="API疎通履歴" Style="{StaticResource SectionTitle}" />
+                                            <TextBlock Text="最終確認: ダッシュボード更新時" Foreground="{DynamicResource TextMuted}" Margin="0,10,0,0" />
+                                            <TextBlock Text="{Binding ApiHealth}" Foreground="{DynamicResource Success}" FontWeight="SemiBold" TextWrapping="Wrap" Margin="0,8,0,0" />
+                                        </StackPanel>
+                                    </Border>
+                                </StackPanel>
                             </Grid>
                         </StackPanel>
                     </Grid>
 
                     <Grid Visibility="{Binding SelectedSection, Converter={StaticResource StringEqualsToVisibilityConverter}, ConverterParameter=Customers}">
-                        <Border Style="{StaticResource PanelCard}">
-                            <StackPanel>
-                                <DockPanel LastChildFill="False" Margin="0,0,0,22">
-                                    <StackPanel DockPanel.Dock="Left">
-                                        <TextBlock Text="顧客管理" Style="{StaticResource PageTitle}" />
-                                        <TextBlock Text="顧客マスタをローカルJSONリポジトリへ保存します" Foreground="{DynamicResource TextMuted}" Margin="0,6,0,0" />
-                                    </StackPanel>
-                                    <Button DockPanel.Dock="Right" Style="{StaticResource GhostButton}" Content="再読込" Width="110" Command="{Binding LoadCustomersCommand}" />
-                                </DockPanel>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="18" />
+                                <ColumnDefinition Width="320" />
+                            </Grid.ColumnDefinitions>
+                            <Border Grid.Column="0" Style="{StaticResource PanelCard}">
+                                <StackPanel>
+                                    <DockPanel LastChildFill="False" Margin="0,0,0,18">
+                                        <StackPanel DockPanel.Dock="Left">
+                                            <TextBlock Text="顧客管理" Style="{StaticResource PageTitle}" />
+                                            <TextBlock Text="検索しながら顧客マスタを確認します" Foreground="{DynamicResource TextMuted}" Margin="0,6,0,0" />
+                                        </StackPanel>
+                                        <Button DockPanel.Dock="Right" Style="{StaticResource GhostButton}" Content="再読込" Width="110" Command="{Binding LoadCustomersCommand}" />
+                                    </DockPanel>
 
-                                <Border CornerRadius="18" Background="{DynamicResource SurfaceAlt}" BorderBrush="{DynamicResource BorderSoft}" BorderThickness="1" Padding="18" Margin="0,0,0,20">
-                                    <Grid>
+                                    <Grid Margin="0,0,0,16">
                                         <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="1.2*" />
-                                            <ColumnDefinition Width="1.5*" />
-                                            <ColumnDefinition Width="1*" />
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="14" />
                                             <ColumnDefinition Width="Auto" />
                                         </Grid.ColumnDefinitions>
-                                        <StackPanel Grid.Column="0" Margin="0,0,12,0">
-                                            <TextBlock Text="顧客名" Style="{StaticResource LabelText}" />
-                                            <TextBox Style="{StaticResource InputBox}" Text="{Binding NewCustomerName, UpdateSourceTrigger=PropertyChanged}" />
+                                        <StackPanel Grid.Column="0">
+                                            <TextBlock Text="検索" Style="{StaticResource LabelText}" />
+                                            <TextBox Style="{StaticResource InputBox}" Text="{Binding CustomerSearchText, UpdateSourceTrigger=PropertyChanged}" />
                                         </StackPanel>
-                                        <StackPanel Grid.Column="1" Margin="0,0,12,0">
-                                            <TextBlock Text="メール" Style="{StaticResource LabelText}" />
-                                            <TextBox Style="{StaticResource InputBox}" Text="{Binding NewCustomerEmail, UpdateSourceTrigger=PropertyChanged}" />
-                                        </StackPanel>
-                                        <StackPanel Grid.Column="2" Margin="0,0,12,0">
-                                            <TextBlock Text="区分" Style="{StaticResource LabelText}" />
-                                            <TextBox Style="{StaticResource InputBox}" Text="{Binding NewCustomerSegment, UpdateSourceTrigger=PropertyChanged}" />
-                                        </StackPanel>
-                                        <Button Grid.Column="3" Style="{StaticResource PrimaryButton}" Content="顧客追加" Width="120" VerticalAlignment="Bottom" Command="{Binding AddCustomerCommand}" />
+                                        <Border Grid.Column="2" Style="{StaticResource FlatCard}" Padding="14,10" VerticalAlignment="Bottom">
+                                            <TextBlock Text="セグメント / メール / 顧客名で絞り込み" Foreground="{DynamicResource TextMuted}" />
+                                        </Border>
                                     </Grid>
-                                </Border>
 
-                                <Border CornerRadius="18" BorderBrush="{DynamicResource BorderSoft}" BorderThickness="1" Background="{DynamicResource Surface}" Padding="1">
-                                    <DataGrid ItemsSource="{Binding Customers}" AutoGenerateColumns="False" CanUserAddRows="False" Height="430">
-                                        <DataGrid.Columns>
-                                            <DataGridTextColumn Header="コード" Binding="{Binding Code}" Width="110" />
-                                            <DataGridTextColumn Header="顧客名" Binding="{Binding Name}" Width="*" />
-                                            <DataGridTextColumn Header="メール" Binding="{Binding Email}" Width="260" />
-                                            <DataGridTextColumn Header="区分" Binding="{Binding Segment}" Width="140" />
-                                            <DataGridCheckBoxColumn Header="有効" Binding="{Binding IsActive}" Width="80" />
-                                        </DataGrid.Columns>
-                                    </DataGrid>
-                                </Border>
-                            </StackPanel>
-                        </Border>
+                                    <Border CornerRadius="18" BorderBrush="{DynamicResource BorderSoft}" BorderThickness="1" Background="{DynamicResource Surface}" Padding="1">
+                                        <DataGrid ItemsSource="{Binding FilteredCustomers}" SelectedItem="{Binding SelectedCustomer}" AutoGenerateColumns="False" CanUserAddRows="False" Height="480">
+                                            <DataGrid.Columns>
+                                                <DataGridTextColumn Header="コード" Binding="{Binding Code}" Width="105" />
+                                                <DataGridTextColumn Header="顧客名" Binding="{Binding Name}" Width="*" />
+                                                <DataGridTextColumn Header="メール" Binding="{Binding Email}" Width="230" />
+                                                <DataGridTemplateColumn Header="区分" Width="130">
+                                                    <DataGridTemplateColumn.CellTemplate>
+                                                        <DataTemplate>
+                                                            <Border Style="{StaticResource Badge}">
+                                                                <TextBlock Text="{Binding Segment}" Foreground="{DynamicResource Accent}" FontWeight="SemiBold" FontSize="12" />
+                                                            </Border>
+                                                        </DataTemplate>
+                                                    </DataGridTemplateColumn.CellTemplate>
+                                                </DataGridTemplateColumn>
+                                                <DataGridTemplateColumn Header="有効" Width="78">
+                                                    <DataGridTemplateColumn.CellTemplate>
+                                                        <DataTemplate>
+                                                            <CheckBox IsChecked="{Binding IsActive}" IsEnabled="False" HorizontalAlignment="Center" />
+                                                        </DataTemplate>
+                                                    </DataGridTemplateColumn.CellTemplate>
+                                                </DataGridTemplateColumn>
+                                            </DataGrid.Columns>
+                                        </DataGrid>
+                                    </Border>
+                                </StackPanel>
+                            </Border>
+
+                            <Border Grid.Column="2" Style="{StaticResource PanelCard}">
+                                <StackPanel>
+                                    <TextBlock Text="顧客登録" Style="{StaticResource PageTitle}" />
+                                    <TextBlock Text="一覧の右側に入力を集約します。" Foreground="{DynamicResource TextMuted}" Margin="0,6,0,18" TextWrapping="Wrap" />
+                                    <TextBlock Text="顧客名" Style="{StaticResource LabelText}" />
+                                    <TextBox Style="{StaticResource InputBox}" Text="{Binding NewCustomerName, UpdateSourceTrigger=PropertyChanged}" Margin="0,0,0,14" />
+                                    <TextBlock Text="メール" Style="{StaticResource LabelText}" />
+                                    <TextBox Style="{StaticResource InputBox}" Text="{Binding NewCustomerEmail, UpdateSourceTrigger=PropertyChanged}" Margin="0,0,0,14" />
+                                    <TextBlock Text="区分" Style="{StaticResource LabelText}" />
+                                    <TextBox Style="{StaticResource InputBox}" Text="{Binding NewCustomerSegment, UpdateSourceTrigger=PropertyChanged}" Margin="0,0,0,20" />
+                                    <Button Style="{StaticResource PrimaryButton}" Content="顧客追加" Command="{Binding AddCustomerCommand}" />
+
+                                    <Border Style="{StaticResource FlatCard}" Margin="0,22,0,0">
+                                        <StackPanel>
+                                            <TextBlock Text="選択中" Style="{StaticResource SectionTitle}" />
+                                            <TextBlock Text="{Binding SelectedCustomer.Name, TargetNullValue=未選択}" Foreground="{DynamicResource TextStrong}" FontWeight="SemiBold" Margin="0,10,0,0" />
+                                            <TextBlock Text="{Binding SelectedCustomer.Email}" Foreground="{DynamicResource TextMuted}" TextWrapping="Wrap" Margin="0,4,0,0" />
+                                        </StackPanel>
+                                    </Border>
+                                </StackPanel>
+                            </Border>
+                        </Grid>
                     </Grid>
 
                     <Grid Visibility="{Binding SelectedSection, Converter={StaticResource StringEqualsToVisibilityConverter}, ConverterParameter=Orders}">
@@ -535,36 +548,35 @@
                                     <Button DockPanel.Dock="Right" Style="{StaticResource GhostButton}" Content="再読込" Width="110" Command="{Binding LoadOrdersCommand}" />
                                 </DockPanel>
 
-                                <Border CornerRadius="18" Background="{DynamicResource SurfaceAlt}" BorderBrush="{DynamicResource BorderSoft}" BorderThickness="1" Padding="18" Margin="0,0,0,20">
-                                    <Grid>
-                                        <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="2*" />
-                                            <ColumnDefinition Width="1*" />
-                                            <ColumnDefinition Width="Auto" />
-                                        </Grid.ColumnDefinitions>
-                                        <StackPanel Grid.Column="0" Margin="0,0,12,0">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="18" />
+                                        <ColumnDefinition Width="320" />
+                                    </Grid.ColumnDefinitions>
+                                    <Border Grid.Column="0" CornerRadius="18" BorderBrush="{DynamicResource BorderSoft}" BorderThickness="1" Background="{DynamicResource Surface}" Padding="1">
+                                        <DataGrid ItemsSource="{Binding Orders}" AutoGenerateColumns="False" CanUserAddRows="False" Height="520">
+                                            <DataGrid.Columns>
+                                                <DataGridTextColumn Header="受注番号" Binding="{Binding OrderNo}" Width="145" />
+                                                <DataGridTextColumn Header="顧客" Binding="{Binding CustomerName}" Width="*" />
+                                                <DataGridTextColumn Header="受注日" Binding="{Binding OrderedAt, StringFormat=yyyy/MM/dd}" Width="130" />
+                                                <DataGridTextColumn Header="金額" Binding="{Binding Amount, StringFormat=¥{0:N0}}" Width="140" />
+                                                <DataGridTextColumn Header="状態" Binding="{Binding Status}" Width="110" />
+                                            </DataGrid.Columns>
+                                        </DataGrid>
+                                    </Border>
+                                    <Border Grid.Column="2" Style="{StaticResource FlatCard}">
+                                        <StackPanel>
+                                            <TextBlock Text="受注登録" Style="{StaticResource SectionTitle}" />
+                                            <TextBlock Text="顧客と金額を指定して受注データを追加します。" Foreground="{DynamicResource TextMuted}" TextWrapping="Wrap" Margin="0,8,0,18" />
                                             <TextBlock Text="顧客" Style="{StaticResource LabelText}" />
-                                            <ComboBox ItemsSource="{Binding Customers}" SelectedItem="{Binding SelectedCustomer}" DisplayMemberPath="Name" />
-                                        </StackPanel>
-                                        <StackPanel Grid.Column="1" Margin="0,0,12,0">
+                                            <ComboBox ItemsSource="{Binding Customers}" SelectedItem="{Binding SelectedCustomer}" DisplayMemberPath="Name" Margin="0,0,0,14" />
                                             <TextBlock Text="金額" Style="{StaticResource LabelText}" />
-                                            <TextBox Style="{StaticResource InputBox}" Text="{Binding NewOrderAmount, UpdateSourceTrigger=PropertyChanged}" />
+                                            <TextBox Style="{StaticResource InputBox}" Text="{Binding NewOrderAmount, UpdateSourceTrigger=PropertyChanged}" Margin="0,0,0,20" />
+                                            <Button Style="{StaticResource PrimaryButton}" Content="受注追加" Command="{Binding AddOrderCommand}" />
                                         </StackPanel>
-                                        <Button Grid.Column="2" Style="{StaticResource PrimaryButton}" Content="受注追加" Width="120" VerticalAlignment="Bottom" Command="{Binding AddOrderCommand}" />
-                                    </Grid>
-                                </Border>
-
-                                <Border CornerRadius="18" BorderBrush="{DynamicResource BorderSoft}" BorderThickness="1" Background="{DynamicResource Surface}" Padding="1">
-                                    <DataGrid ItemsSource="{Binding Orders}" AutoGenerateColumns="False" CanUserAddRows="False" Height="430">
-                                        <DataGrid.Columns>
-                                            <DataGridTextColumn Header="受注番号" Binding="{Binding OrderNo}" Width="150" />
-                                            <DataGridTextColumn Header="顧客名" Binding="{Binding CustomerName}" Width="*" />
-                                            <DataGridTextColumn Header="受注日" Binding="{Binding OrderedAt, StringFormat=yyyy/MM/dd HH:mm}" Width="170" />
-                                            <DataGridTextColumn Header="金額" Binding="{Binding Amount, StringFormat=¥{0:N0}}" Width="150" />
-                                            <DataGridTextColumn Header="状態" Binding="{Binding Status}" Width="130" />
-                                        </DataGrid.Columns>
-                                    </DataGrid>
-                                </Border>
+                                    </Border>
+                                </Grid>
                             </StackPanel>
                         </Border>
                     </Grid>
@@ -573,68 +585,122 @@
                         <Border Style="{StaticResource PanelCard}">
                             <Grid>
                                 <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="1.2*" />
+                                    <ColumnDefinition Width="22" />
                                     <ColumnDefinition Width="*" />
-                                    <ColumnDefinition Width="260" />
                                 </Grid.ColumnDefinitions>
-                                <StackPanel>
-                                    <TextBlock Text="レポート" Style="{StaticResource PageTitle}" />
-                                    <TextBlock Text="受注一覧をCSVとしてデスクトップに出力します。帳票基盤やExcel出力へ差し替える入口です。" Foreground="{DynamicResource TextMuted}" TextWrapping="Wrap" Margin="0,8,0,24" />
-                                    <Button Style="{StaticResource PrimaryButton}" Content="受注CSVを出力" Width="180" HorizontalAlignment="Left" Command="{Binding ExportOrdersReportCommand}" />
-                                    <TextBlock Text="{Binding ReportMessage}" Foreground="{DynamicResource TextStrong}" Margin="0,22,0,0" TextWrapping="Wrap" />
+                                <StackPanel Grid.Column="0">
+                                    <TextBlock Text="レポート出力" Style="{StaticResource PageTitle}" />
+                                    <TextBlock Text="出力対象・期間・形式・保存先を確認してからCSVを作成します。" Foreground="{DynamicResource TextMuted}" TextWrapping="Wrap" Margin="0,8,0,24" />
+
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="14" />
+                                            <ColumnDefinition Width="*" />
+                                        </Grid.ColumnDefinitions>
+                                        <StackPanel Grid.Column="0">
+                                            <TextBlock Text="出力対象" Style="{StaticResource LabelText}" />
+                                            <ComboBox SelectedIndex="0">
+                                                <ComboBoxItem Content="受注レポート" />
+                                                <ComboBoxItem Content="顧客一覧" />
+                                            </ComboBox>
+                                        </StackPanel>
+                                        <StackPanel Grid.Column="2">
+                                            <TextBlock Text="期間" Style="{StaticResource LabelText}" />
+                                            <ComboBox SelectedIndex="0">
+                                                <ComboBoxItem Content="今月" />
+                                                <ComboBoxItem Content="前月" />
+                                                <ComboBoxItem Content="任意期間" />
+                                            </ComboBox>
+                                        </StackPanel>
+                                    </Grid>
+
+                                    <Grid Margin="0,16,0,0">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="14" />
+                                            <ColumnDefinition Width="*" />
+                                        </Grid.ColumnDefinitions>
+                                        <StackPanel Grid.Column="0">
+                                            <TextBlock Text="形式" Style="{StaticResource LabelText}" />
+                                            <ComboBox SelectedIndex="0">
+                                                <ComboBoxItem Content="CSV" />
+                                                <ComboBoxItem Content="Excel（差し替え想定）" />
+                                            </ComboBox>
+                                        </StackPanel>
+                                        <StackPanel Grid.Column="2">
+                                            <TextBlock Text="保存先" Style="{StaticResource LabelText}" />
+                                            <TextBox Style="{StaticResource InputBox}" Text="Desktop" IsReadOnly="True" />
+                                        </StackPanel>
+                                    </Grid>
+
+                                    <Button Style="{StaticResource PrimaryButton}" Content="出力する" Width="150" HorizontalAlignment="Left" Margin="0,24,0,0" Command="{Binding ExportOrdersReportCommand}" />
+                                    <TextBlock Text="{Binding ReportMessage}" Foreground="{DynamicResource TextStrong}" Margin="0,18,0,0" TextWrapping="Wrap" />
                                 </StackPanel>
-                                <Border Grid.Column="1" CornerRadius="22" Background="{DynamicResource AccentSoft}" Padding="22" Margin="26,0,0,0">
-                                    <StackPanel VerticalAlignment="Center">
-                                        <TextBlock Text="CSV" FontSize="42" FontWeight="Bold" Foreground="{DynamicResource Accent}" />
-                                        <TextBlock Text="Infrastructure層の IReportExporter を差し替えれば、PDF/Excel出力にも拡張できます。" Foreground="{DynamicResource TextMuted}" TextWrapping="Wrap" Margin="0,8,0,0" />
-                                    </StackPanel>
-                                </Border>
+
+                                <StackPanel Grid.Column="2">
+                                    <Border Style="{StaticResource FlatCard}" Margin="0,0,0,16">
+                                        <StackPanel>
+                                            <TextBlock Text="前回出力" Style="{StaticResource SectionTitle}" />
+                                            <TextBlock Text="{Binding LastReportExportedAt}" Foreground="{DynamicResource TextMuted}" Margin="0,10,0,0" />
+                                        </StackPanel>
+                                    </Border>
+                                    <Border Style="{StaticResource FlatCard}">
+                                        <StackPanel>
+                                            <TextBlock Text="出力履歴" Style="{StaticResource SectionTitle}" />
+                                            <TextBlock Text="・受注レポート / CSV / Desktop" Foreground="{DynamicResource TextStrong}" Margin="0,12,0,0" />
+                                            <TextBlock Text="・IReportExporter を差し替えてExcel/PDFに拡張可能" Foreground="{DynamicResource TextMuted}" TextWrapping="Wrap" Margin="0,8,0,0" />
+                                        </StackPanel>
+                                    </Border>
+                                </StackPanel>
                             </Grid>
                         </Border>
                     </Grid>
 
                     <Grid Visibility="{Binding SelectedSection, Converter={StaticResource StringEqualsToVisibilityConverter}, ConverterParameter=Settings}">
-                        <Border Style="{StaticResource PanelCard}">
-                            <StackPanel>
-                                <TextBlock Text="設定 / アーキテクチャメモ" Style="{StaticResource PageTitle}" />
-                                <Border CornerRadius="18" Background="{DynamicResource SurfaceAlt}" BorderBrush="{DynamicResource BorderSoft}" BorderThickness="1" Padding="20" Margin="0,22,0,0">
+                        <StackPanel>
+                            <TextBlock Text="設定" Style="{StaticResource PageTitle}" Margin="0,0,0,16" />
+                            <UniformGrid Columns="2">
+                                <Border Style="{StaticResource PanelCard}" Margin="0,0,16,16">
                                     <Grid>
                                         <Grid.ColumnDefinitions>
                                             <ColumnDefinition Width="*" />
                                             <ColumnDefinition Width="Auto" />
                                         </Grid.ColumnDefinitions>
                                         <StackPanel>
-                                            <TextBlock Text="表示テーマ" FontSize="17" FontWeight="SemiBold" Foreground="{DynamicResource TextStrong}" />
+                                            <TextBlock Text="表示テーマ" Style="{StaticResource SectionTitle}" />
                                             <TextBlock Text="ライトモードとダークモードを切り替えます。" Foreground="{DynamicResource TextMuted}" TextWrapping="Wrap" Margin="0,8,0,0" />
                                         </StackPanel>
                                         <Button x:Name="ThemeToggleButton" Grid.Column="1" Style="{StaticResource PrimaryButton}" Content="ダークモードに切替" Width="170" Margin="24,0,0,0" VerticalAlignment="Center" Click="ThemeToggleButton_Click" />
                                     </Grid>
                                 </Border>
-                                <Grid Margin="0,18,0,0">
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="*" />
-                                        <ColumnDefinition Width="16" />
-                                        <ColumnDefinition Width="*" />
-                                    </Grid.ColumnDefinitions>
-                                    <Border CornerRadius="18" Background="{DynamicResource SurfaceAlt}" BorderBrush="{DynamicResource BorderSoft}" BorderThickness="1" Padding="20">
-                                        <StackPanel>
-                                            <TextBlock Text="Layering" FontSize="17" FontWeight="SemiBold" Foreground="{DynamicResource TextStrong}" />
-                                            <TextBlock Text="Desktop → Application → Domain。InfrastructureはApplicationのinterfaceを実装します。" Foreground="{DynamicResource TextMuted}" TextWrapping="Wrap" Margin="0,8,0,0" />
-                                        </StackPanel>
-                                    </Border>
-                                    <Border Grid.Column="2" CornerRadius="18" Background="{DynamicResource SurfaceAlt}" BorderBrush="{DynamicResource BorderSoft}" BorderThickness="1" Padding="20">
-                                        <StackPanel>
-                                            <TextBlock Text="Data Path" FontSize="17" FontWeight="SemiBold" Foreground="{DynamicResource TextStrong}" />
-                                            <TextBlock Text="%LOCALAPPDATA%\ModernBusinessWpfSample" Foreground="{DynamicResource TextMuted}" TextWrapping="Wrap" Margin="0,8,0,0" />
-                                        </StackPanel>
-                                    </Border>
-                                </Grid>
-                            </StackPanel>
-                        </Border>
+                                <Border Style="{StaticResource PanelCard}">
+                                    <StackPanel>
+                                        <TextBlock Text="API接続先" Style="{StaticResource SectionTitle}" />
+                                        <TextBlock Text="ProductCatalogApiClient" Foreground="{DynamicResource TextStrong}" FontWeight="SemiBold" Margin="0,8,0,0" />
+                                        <TextBlock Text="Typed HttpClient の差し替えポイントです。" Foreground="{DynamicResource TextMuted}" TextWrapping="Wrap" Margin="0,6,0,0" />
+                                    </StackPanel>
+                                </Border>
+                                <Border Style="{StaticResource PanelCard}" Margin="0,0,16,0">
+                                    <StackPanel>
+                                        <TextBlock Text="データ保存先" Style="{StaticResource SectionTitle}" />
+                                        <TextBlock Text="%LOCALAPPDATA%\ModernBusinessWpfSample" Foreground="{DynamicResource TextMuted}" TextWrapping="Wrap" Margin="0,8,0,0" />
+                                    </StackPanel>
+                                </Border>
+                                <Border Style="{StaticResource PanelCard}">
+                                    <StackPanel>
+                                        <TextBlock Text="アプリ情報" Style="{StaticResource SectionTitle}" />
+                                        <TextBlock Text="Desktop → Application → Domain。InfrastructureはApplicationのinterfaceを実装します。" Foreground="{DynamicResource TextMuted}" TextWrapping="Wrap" Margin="0,8,0,0" />
+                                    </StackPanel>
+                                </Border>
+                            </UniformGrid>
+                        </StackPanel>
                     </Grid>
                 </StackPanel>
             </ScrollViewer>
 
-            <Border Grid.Row="2" Background="{DynamicResource AppBg}" Padding="38,0,38,26">
+            <Border Grid.Row="1" Background="{DynamicResource AppBg}" Padding="38,0,38,26">
                 <Border CornerRadius="16" Background="{DynamicResource Surface}" BorderBrush="{DynamicResource BorderSoft}" BorderThickness="1" Padding="16,11">
                     <StackPanel Orientation="Horizontal">
                         <Ellipse Width="8" Height="8" Fill="{DynamicResource Success}" Margin="0,0,10,0" />

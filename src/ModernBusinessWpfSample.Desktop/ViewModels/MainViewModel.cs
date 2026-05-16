@@ -1,4 +1,6 @@
 using System.Collections.ObjectModel;
+using System.ComponentModel;
+using System.Windows.Data;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using ModernBusinessWpfSample.Application.Customers;
@@ -20,6 +22,8 @@ public partial class MainViewModel : ObservableObject
     public ObservableCollection<string> Sections { get; } = ["Dashboard", "Customers", "Orders", "Reports", "Settings"];
     public ObservableCollection<CustomerDto> Customers { get; } = [];
     public ObservableCollection<OrderDto> Orders { get; } = [];
+    public ObservableCollection<OrderDto> RecentOrders { get; } = [];
+    public ICollectionView FilteredCustomers { get; }
 
     [ObservableProperty] private string selectedSection = "Dashboard";
     [ObservableProperty] private int activeCustomers;
@@ -28,6 +32,8 @@ public partial class MainViewModel : ObservableObject
     [ObservableProperty] private string apiHealth = "Not checked";
     [ObservableProperty] private string statusMessage = "Ready.";
     [ObservableProperty] private string reportMessage = string.Empty;
+    [ObservableProperty] private string lastReportExportedAt = "未出力";
+    [ObservableProperty] private string customerSearchText = string.Empty;
 
     [ObservableProperty] private string newCustomerName = "Sample Customer";
     [ObservableProperty] private string newCustomerEmail = "customer@example.com";
@@ -50,6 +56,9 @@ public partial class MainViewModel : ObservableObject
         _getOrders = getOrders;
         _registerOrder = registerOrder;
         _exportOrders = exportOrders;
+
+        FilteredCustomers = CollectionViewSource.GetDefaultView(Customers);
+        FilteredCustomers.Filter = FilterCustomer;
 
         _ = InitializeAsync();
     }
@@ -85,6 +94,7 @@ public partial class MainViewModel : ObservableObject
         Customers.Clear();
         foreach (var customer in await _getCustomers.ExecuteAsync(CancellationToken.None))
             Customers.Add(customer);
+        FilteredCustomers.Refresh();
         SelectedCustomer ??= Customers.FirstOrDefault();
         StatusMessage = "Customers loaded.";
     }
@@ -113,6 +123,7 @@ public partial class MainViewModel : ObservableObject
         Orders.Clear();
         foreach (var order in await _getOrders.ExecuteAsync(CancellationToken.None))
             Orders.Add(order);
+        RefreshRecentOrders();
         StatusMessage = "Orders loaded.";
     }
 
@@ -139,6 +150,39 @@ public partial class MainViewModel : ObservableObject
         }
     }
 
+    partial void OnCustomerSearchTextChanged(string value)
+    {
+        FilteredCustomers.Refresh();
+    }
+
+    private bool FilterCustomer(object item)
+    {
+        if (item is not CustomerDto customer)
+        {
+            return false;
+        }
+
+        if (string.IsNullOrWhiteSpace(CustomerSearchText))
+        {
+            return true;
+        }
+
+        var keyword = CustomerSearchText.Trim();
+        return customer.Code.Contains(keyword, StringComparison.OrdinalIgnoreCase)
+            || customer.Name.Contains(keyword, StringComparison.OrdinalIgnoreCase)
+            || customer.Email.Contains(keyword, StringComparison.OrdinalIgnoreCase)
+            || customer.Segment.Contains(keyword, StringComparison.OrdinalIgnoreCase);
+    }
+
+    private void RefreshRecentOrders()
+    {
+        RecentOrders.Clear();
+        foreach (var order in Orders.OrderByDescending(x => x.OrderedAt).Take(5))
+        {
+            RecentOrders.Add(order);
+        }
+    }
+
     [RelayCommand]
     private async Task ExportOrdersReportAsync()
     {
@@ -146,6 +190,7 @@ public partial class MainViewModel : ObservableObject
         {
             var path = await _exportOrders.ExecuteAsync(CancellationToken.None);
             ReportMessage = $"Exported: {path}";
+            LastReportExportedAt = DateTime.Now.ToString("yyyy/MM/dd HH:mm");
             StatusMessage = "Report exported.";
         }
         catch (Exception ex)
