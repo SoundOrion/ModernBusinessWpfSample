@@ -156,6 +156,18 @@ public partial class MainWindow : Window
         Resources[resourceKey] = new SolidColorBrush(color);
     }
 
+    private void SetTitleGradientColors(Color startColor, Color endColor)
+    {
+        if (Resources["TitleGradientBrush"] is not LinearGradientBrush titleGradientBrush ||
+            titleGradientBrush.GradientStops.Count < 3)
+        {
+            return;
+        }
+
+        titleGradientBrush.GradientStops[0].Color = startColor;
+        titleGradientBrush.GradientStops[2].Color = endColor;
+    }
+
     private void StatusMessageIfPossible(string message)
     {
         if (DataContext is MainViewModel viewModel)
