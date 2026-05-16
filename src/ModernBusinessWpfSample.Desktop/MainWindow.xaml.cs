@@ -11,7 +11,7 @@ namespace ModernBusinessWpfSample.Desktop;
 
 public partial class MainWindow : Window
 {
-    private bool _isDarkMode;
+    private bool _isDarkMode = true;
 
     public MainWindow(MainViewModel viewModel)
     {
@@ -77,67 +77,73 @@ public partial class MainWindow : Window
     {
         if (_isDarkMode)
         {
-            SetResourceColor("AppBg", Color.FromRgb(15, 23, 42));
-            SetResourceColor("Surface", Color.FromRgb(30, 41, 59));
-            SetResourceColor("SurfaceAlt", Color.FromRgb(17, 24, 39));
-            SetResourceColor("BorderSoft", Color.FromRgb(51, 65, 85));
-            SetResourceColor("TextStrong", Color.FromRgb(241, 245, 249));
-            SetResourceColor("TextMuted", Color.FromRgb(148, 163, 184));
-            SetResourceColor("Accent", Color.FromRgb(96, 165, 250));
-            SetResourceColor("AccentHover", Color.FromRgb(59, 130, 246));
-            SetResourceColor("AccentSoft", Color.FromRgb(30, 58, 138));
-            SetResourceColor("SuccessSoft", Color.FromRgb(6, 78, 59));
-            SetResourceColor("Success", Color.FromRgb(52, 211, 153));
-            SetResourceColor("TitleBarBg", Color.FromRgb(2, 6, 23));
-            SetResourceColor("TitleBarBg2", Color.FromRgb(30, 41, 59));
+            SetResourceColor("AppBg", Color.FromRgb(7, 10, 18));
+            SetResourceColor("Surface", Color.FromArgb(230, 26, 32, 51));
+            SetResourceColor("SurfaceAlt", Color.FromArgb(184, 20, 26, 42));
+            SetResourceColor("BorderSoft", Color.FromArgb(51, 255, 255, 255));
+            SetResourceColor("TextStrong", Color.FromRgb(248, 250, 252));
+            SetResourceColor("TextMuted", Color.FromRgb(154, 168, 199));
+            SetResourceColor("Accent", Color.FromRgb(124, 58, 237));
+            SetResourceColor("AccentHover", Color.FromRgb(6, 182, 212));
+            SetResourceColor("AccentSoft", Color.FromArgb(38, 35, 91, 255));
+            SetResourceColor("SuccessSoft", Color.FromArgb(30, 16, 185, 129));
+            SetResourceColor("Success", Color.FromRgb(45, 212, 191));
+            SetResourceColor("TitleBarBg", Color.FromRgb(7, 10, 18));
+            SetResourceColor("TitleBarBg2", Color.FromRgb(17, 24, 39));
             SetResourceColor("TitleBarBorder", Color.FromRgb(51, 65, 85));
-            SetResourceColor("TitleBarText", Color.FromRgb(248, 250, 252));
-            SetResourceColor("TitleBarSubtle", Color.FromRgb(147, 197, 253));
-            SetResourceColor("NavigationHover", Color.FromRgb(30, 41, 59));
-            SetResourceColor("RowBorder", Color.FromRgb(51, 65, 85));
-            SetResourceColor("HeaderIconBg", Color.FromRgb(30, 58, 138));
-            SetResourceColor("HeaderBadgeBg", Color.FromRgb(30, 41, 59));
-            SetResourceColor("HeaderUserBg", Color.FromRgb(15, 23, 42));
-            SetResourceColor("HeaderBadgeBorder", Color.FromRgb(51, 65, 85));
+            SetResourceColor("TitleBarText", Color.FromRgb(255, 255, 255));
+            SetResourceColor("TitleBarSubtle", Color.FromRgb(165, 180, 252));
+            SetResourceColor("NavigationHover", Color.FromArgb(38, 255, 255, 255));
+            SetResourceColor("RowBorder", Color.FromRgb(31, 41, 55));
+            SetResourceColor("HeaderIconBg", Color.FromArgb(46, 30, 27, 75));
+            SetResourceColor("HeaderBadgeBg", Color.FromArgb(43, 15, 23, 42));
+            SetResourceColor("HeaderUserBg", Color.FromArgb(51, 30, 41, 59));
+            SetResourceColor("HeaderBadgeBorder", Color.FromArgb(102, 124, 58, 237));
             SetResourceColor("HeaderOnline", Color.FromRgb(52, 211, 153));
-            SetResourceColor("HeaderOnlineText", Color.FromRgb(220, 252, 231));
+            SetResourceColor("HeaderOnlineText", Color.FromRgb(209, 250, 229));
+            SetResourceColor("Danger", Color.FromRgb(251, 113, 133));
+            SetResourceColor("Warning", Color.FromRgb(251, 191, 36));
+            SetResourceColor("GlassStroke", Color.FromArgb(64, 255, 255, 255));
+            SetResourceColor("InputFill", Color.FromArgb(20, 255, 255, 255));
 
-            TitleGradientStart.Color = Color.FromRgb(2, 6, 23);
-            TitleGradientEnd.Color = Color.FromRgb(30, 41, 59);
+            SetTitleGradientColors(Color.FromRgb(49, 46, 129), Color.FromRgb(6, 182, 212));
             ThemeToggleButton.Content = "ライトモードに切替";
-            StatusMessageIfPossible("ダークモードに切り替えました。");
+            StatusMessageIfPossible("2026ダークモードに切り替えました。");
         }
         else
         {
-            SetResourceColor("AppBg", Color.FromRgb(243, 246, 251));
-            SetResourceColor("Surface", Color.FromRgb(255, 255, 255));
-            SetResourceColor("SurfaceAlt", Color.FromRgb(248, 250, 252));
-            SetResourceColor("BorderSoft", Color.FromRgb(226, 232, 240));
-            SetResourceColor("TextStrong", Color.FromRgb(22, 32, 51));
-            SetResourceColor("TextMuted", Color.FromRgb(100, 116, 139));
-            SetResourceColor("Accent", Color.FromRgb(37, 99, 235));
-            SetResourceColor("AccentHover", Color.FromRgb(29, 78, 216));
-            SetResourceColor("AccentSoft", Color.FromRgb(234, 241, 255));
-            SetResourceColor("SuccessSoft", Color.FromRgb(236, 253, 243));
-            SetResourceColor("Success", Color.FromRgb(3, 152, 85));
-            SetResourceColor("TitleBarBg", Color.FromRgb(15, 23, 42));
-            SetResourceColor("TitleBarBg2", Color.FromRgb(30, 58, 138));
-            SetResourceColor("TitleBarBorder", Color.FromRgb(29, 78, 216));
-            SetResourceColor("TitleBarText", Color.FromRgb(255, 255, 255));
-            SetResourceColor("TitleBarSubtle", Color.FromRgb(191, 219, 254));
-            SetResourceColor("NavigationHover", Color.FromRgb(241, 245, 249));
-            SetResourceColor("RowBorder", Color.FromRgb(238, 242, 247));
-            SetResourceColor("HeaderIconBg", Color.FromRgb(219, 234, 254));
-            SetResourceColor("HeaderBadgeBg", Color.FromRgb(21, 62, 117));
-            SetResourceColor("HeaderUserBg", Color.FromRgb(23, 37, 84));
-            SetResourceColor("HeaderBadgeBorder", Color.FromRgb(59, 130, 246));
-            SetResourceColor("HeaderOnline", Color.FromRgb(34, 197, 94));
-            SetResourceColor("HeaderOnlineText", Color.FromRgb(220, 252, 231));
+            SetResourceColor("AppBg", Color.FromRgb(239, 244, 255));
+            SetResourceColor("Surface", Color.FromArgb(232, 255, 255, 255));
+            SetResourceColor("SurfaceAlt", Color.FromArgb(205, 248, 250, 252));
+            SetResourceColor("BorderSoft", Color.FromArgb(140, 148, 163, 184));
+            SetResourceColor("TextStrong", Color.FromRgb(15, 23, 42));
+            SetResourceColor("TextMuted", Color.FromRgb(71, 85, 105));
+            SetResourceColor("Accent", Color.FromRgb(99, 102, 241));
+            SetResourceColor("AccentHover", Color.FromRgb(8, 145, 178));
+            SetResourceColor("AccentSoft", Color.FromArgb(70, 224, 231, 255));
+            SetResourceColor("SuccessSoft", Color.FromArgb(70, 209, 250, 229));
+            SetResourceColor("Success", Color.FromRgb(13, 148, 136));
+            SetResourceColor("TitleBarBg", Color.FromRgb(255, 255, 255));
+            SetResourceColor("TitleBarBg2", Color.FromRgb(238, 242, 255));
+            SetResourceColor("TitleBarBorder", Color.FromRgb(199, 210, 254));
+            SetResourceColor("TitleBarText", Color.FromRgb(15, 23, 42));
+            SetResourceColor("TitleBarSubtle", Color.FromRgb(79, 70, 229));
+            SetResourceColor("NavigationHover", Color.FromArgb(150, 255, 255, 255));
+            SetResourceColor("RowBorder", Color.FromRgb(226, 232, 240));
+            SetResourceColor("HeaderIconBg", Color.FromArgb(95, 224, 231, 255));
+            SetResourceColor("HeaderBadgeBg", Color.FromArgb(150, 255, 255, 255));
+            SetResourceColor("HeaderUserBg", Color.FromArgb(120, 238, 242, 255));
+            SetResourceColor("HeaderBadgeBorder", Color.FromArgb(150, 99, 102, 241));
+            SetResourceColor("HeaderOnline", Color.FromRgb(13, 148, 136));
+            SetResourceColor("HeaderOnlineText", Color.FromRgb(4, 47, 46));
+            SetResourceColor("Danger", Color.FromRgb(225, 29, 72));
+            SetResourceColor("Warning", Color.FromRgb(217, 119, 6));
+            SetResourceColor("GlassStroke", Color.FromArgb(175, 255, 255, 255));
+            SetResourceColor("InputFill", Color.FromArgb(185, 255, 255, 255));
 
-            TitleGradientStart.Color = Color.FromRgb(15, 23, 42);
-            TitleGradientEnd.Color = Color.FromRgb(30, 58, 138);
+            SetTitleGradientColors(Color.FromRgb(79, 70, 229), Color.FromRgb(14, 165, 233));
             ThemeToggleButton.Content = "ダークモードに切替";
-            StatusMessageIfPossible("ライトモードに切り替えました。");
+            StatusMessageIfPossible("クリーンライトモードに切り替えました。");
         }
 
         ApplyNativeTitleBarColors();
@@ -146,6 +152,18 @@ public partial class MainWindow : Window
     private void SetResourceColor(string resourceKey, Color color)
     {
         Resources[resourceKey] = new SolidColorBrush(color);
+    }
+
+    private void SetTitleGradientColors(Color startColor, Color endColor)
+    {
+        if (Resources["TitleGradientBrush"] is not LinearGradientBrush titleGradientBrush ||
+            titleGradientBrush.GradientStops.Count < 3)
+        {
+            return;
+        }
+
+        titleGradientBrush.GradientStops[0].Color = startColor;
+        titleGradientBrush.GradientStops[2].Color = endColor;
     }
 
     private void StatusMessageIfPossible(string message)
