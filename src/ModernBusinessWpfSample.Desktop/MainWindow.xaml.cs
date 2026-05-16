@@ -106,7 +106,8 @@ public partial class MainWindow : Window
             SetResourceColor("GlassStroke", Color.FromArgb(64, 255, 255, 255));
             SetResourceColor("InputFill", Color.FromArgb(20, 255, 255, 255));
 
-            SetTitleGradientColors(Color.FromRgb(49, 46, 129), Color.FromRgb(6, 182, 212));
+            TitleGradientStart.Color = Color.FromRgb(49, 46, 129);
+            TitleGradientEnd.Color = Color.FromRgb(6, 182, 212);
             ThemeToggleButton.Content = "ライトモードに切替";
             StatusMessageIfPossible("2026ダークモードに切り替えました。");
         }
@@ -141,7 +142,8 @@ public partial class MainWindow : Window
             SetResourceColor("GlassStroke", Color.FromArgb(175, 255, 255, 255));
             SetResourceColor("InputFill", Color.FromArgb(185, 255, 255, 255));
 
-            SetTitleGradientColors(Color.FromRgb(79, 70, 229), Color.FromRgb(14, 165, 233));
+            TitleGradientStart.Color = Color.FromRgb(79, 70, 229);
+            TitleGradientEnd.Color = Color.FromRgb(14, 165, 233);
             ThemeToggleButton.Content = "ダークモードに切替";
             StatusMessageIfPossible("クリーンライトモードに切り替えました。");
         }
