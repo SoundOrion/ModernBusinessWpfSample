@@ -77,65 +77,65 @@ public partial class MainWindow : Window
     {
         if (_isDarkMode)
         {
-            SetResourceColor("AppBg", Color.FromRgb(15, 23, 42));
-            SetResourceColor("Surface", Color.FromRgb(30, 41, 59));
-            SetResourceColor("SurfaceAlt", Color.FromRgb(17, 24, 39));
-            SetResourceColor("BorderSoft", Color.FromRgb(51, 65, 85));
-            SetResourceColor("TextStrong", Color.FromRgb(241, 245, 249));
-            SetResourceColor("TextMuted", Color.FromRgb(148, 163, 184));
-            SetResourceColor("Accent", Color.FromRgb(96, 165, 250));
-            SetResourceColor("AccentHover", Color.FromRgb(59, 130, 246));
-            SetResourceColor("AccentSoft", Color.FromRgb(30, 58, 138));
-            SetResourceColor("SuccessSoft", Color.FromRgb(6, 78, 59));
+            SetResourceColor("AppBg", Color.FromRgb(5, 35, 25));
+            SetResourceColor("Surface", Color.FromRgb(8, 54, 38));
+            SetResourceColor("SurfaceAlt", Color.FromRgb(3, 43, 29));
+            SetResourceColor("BorderSoft", Color.FromRgb(23, 91, 61));
+            SetResourceColor("TextStrong", Color.FromRgb(240, 253, 244));
+            SetResourceColor("TextMuted", Color.FromRgb(163, 201, 178));
+            SetResourceColor("Accent", Color.FromRgb(52, 211, 153));
+            SetResourceColor("AccentHover", Color.FromRgb(47, 191, 106));
+            SetResourceColor("AccentSoft", Color.FromRgb(0, 107, 49));
+            SetResourceColor("SuccessSoft", Color.FromRgb(6, 78, 43));
             SetResourceColor("Success", Color.FromRgb(52, 211, 153));
-            SetResourceColor("TitleBarBg", Color.FromRgb(2, 6, 23));
-            SetResourceColor("TitleBarBg2", Color.FromRgb(30, 41, 59));
-            SetResourceColor("TitleBarBorder", Color.FromRgb(51, 65, 85));
-            SetResourceColor("TitleBarText", Color.FromRgb(248, 250, 252));
-            SetResourceColor("TitleBarSubtle", Color.FromRgb(147, 197, 253));
-            SetResourceColor("NavigationHover", Color.FromRgb(30, 41, 59));
-            SetResourceColor("RowBorder", Color.FromRgb(51, 65, 85));
-            SetResourceColor("HeaderIconBg", Color.FromRgb(30, 58, 138));
-            SetResourceColor("HeaderBadgeBg", Color.FromRgb(30, 41, 59));
-            SetResourceColor("HeaderUserBg", Color.FromRgb(15, 23, 42));
-            SetResourceColor("HeaderBadgeBorder", Color.FromRgb(51, 65, 85));
+            SetResourceColor("TitleBarBg", Color.FromRgb(0, 48, 32));
+            SetResourceColor("TitleBarBg2", Color.FromRgb(8, 54, 38));
+            SetResourceColor("TitleBarBorder", Color.FromRgb(23, 91, 61));
+            SetResourceColor("TitleBarText", Color.FromRgb(247, 251, 248));
+            SetResourceColor("TitleBarSubtle", Color.FromRgb(167, 243, 208));
+            SetResourceColor("NavigationHover", Color.FromRgb(8, 54, 38));
+            SetResourceColor("RowBorder", Color.FromRgb(23, 91, 61));
+            SetResourceColor("HeaderIconBg", Color.FromRgb(0, 107, 49));
+            SetResourceColor("HeaderBadgeBg", Color.FromRgb(8, 54, 38));
+            SetResourceColor("HeaderUserBg", Color.FromRgb(5, 35, 25));
+            SetResourceColor("HeaderBadgeBorder", Color.FromRgb(23, 91, 61));
             SetResourceColor("HeaderOnline", Color.FromRgb(52, 211, 153));
             SetResourceColor("HeaderOnlineText", Color.FromRgb(220, 252, 231));
 
-            TitleGradientStart.Color = Color.FromRgb(2, 6, 23);
-            TitleGradientEnd.Color = Color.FromRgb(30, 41, 59);
+            TitleGradientStart.Color = Color.FromRgb(0, 48, 32);
+            TitleGradientEnd.Color = Color.FromRgb(8, 54, 38);
             ThemeToggleButton.Content = "ライトモードに切替";
             StatusMessageIfPossible("ダークモードに切り替えました。");
         }
         else
         {
-            SetResourceColor("AppBg", Color.FromRgb(243, 246, 251));
+            SetResourceColor("AppBg", Color.FromRgb(241, 248, 244));
             SetResourceColor("Surface", Color.FromRgb(255, 255, 255));
-            SetResourceColor("SurfaceAlt", Color.FromRgb(248, 250, 252));
-            SetResourceColor("BorderSoft", Color.FromRgb(226, 232, 240));
-            SetResourceColor("TextStrong", Color.FromRgb(22, 32, 51));
-            SetResourceColor("TextMuted", Color.FromRgb(100, 116, 139));
-            SetResourceColor("Accent", Color.FromRgb(37, 99, 235));
-            SetResourceColor("AccentHover", Color.FromRgb(29, 78, 216));
-            SetResourceColor("AccentSoft", Color.FromRgb(234, 241, 255));
-            SetResourceColor("SuccessSoft", Color.FromRgb(236, 253, 243));
-            SetResourceColor("Success", Color.FromRgb(3, 152, 85));
-            SetResourceColor("TitleBarBg", Color.FromRgb(15, 23, 42));
-            SetResourceColor("TitleBarBg2", Color.FromRgb(30, 58, 138));
-            SetResourceColor("TitleBarBorder", Color.FromRgb(29, 78, 216));
+            SetResourceColor("SurfaceAlt", Color.FromRgb(247, 251, 248));
+            SetResourceColor("BorderSoft", Color.FromRgb(214, 233, 221));
+            SetResourceColor("TextStrong", Color.FromRgb(18, 51, 38));
+            SetResourceColor("TextMuted", Color.FromRgb(93, 119, 107));
+            SetResourceColor("Accent", Color.FromRgb(0, 132, 61));
+            SetResourceColor("AccentHover", Color.FromRgb(0, 107, 49));
+            SetResourceColor("AccentSoft", Color.FromRgb(229, 244, 235));
+            SetResourceColor("SuccessSoft", Color.FromRgb(230, 247, 237));
+            SetResourceColor("Success", Color.FromRgb(0, 154, 68));
+            SetResourceColor("TitleBarBg", Color.FromRgb(0, 72, 49));
+            SetResourceColor("TitleBarBg2", Color.FromRgb(0, 132, 61));
+            SetResourceColor("TitleBarBorder", Color.FromRgb(0, 107, 49));
             SetResourceColor("TitleBarText", Color.FromRgb(255, 255, 255));
-            SetResourceColor("TitleBarSubtle", Color.FromRgb(191, 219, 254));
-            SetResourceColor("NavigationHover", Color.FromRgb(241, 245, 249));
-            SetResourceColor("RowBorder", Color.FromRgb(238, 242, 247));
-            SetResourceColor("HeaderIconBg", Color.FromRgb(219, 234, 254));
-            SetResourceColor("HeaderBadgeBg", Color.FromRgb(21, 62, 117));
-            SetResourceColor("HeaderUserBg", Color.FromRgb(23, 37, 84));
-            SetResourceColor("HeaderBadgeBorder", Color.FromRgb(59, 130, 246));
-            SetResourceColor("HeaderOnline", Color.FromRgb(34, 197, 94));
+            SetResourceColor("TitleBarSubtle", Color.FromRgb(189, 239, 209));
+            SetResourceColor("NavigationHover", Color.FromRgb(240, 253, 244));
+            SetResourceColor("RowBorder", Color.FromRgb(228, 241, 233));
+            SetResourceColor("HeaderIconBg", Color.FromRgb(216, 243, 227));
+            SetResourceColor("HeaderBadgeBg", Color.FromRgb(0, 107, 49));
+            SetResourceColor("HeaderUserBg", Color.FromRgb(0, 82, 58));
+            SetResourceColor("HeaderBadgeBorder", Color.FromRgb(47, 191, 106));
+            SetResourceColor("HeaderOnline", Color.FromRgb(47, 191, 106));
             SetResourceColor("HeaderOnlineText", Color.FromRgb(220, 252, 231));
 
-            TitleGradientStart.Color = Color.FromRgb(15, 23, 42);
-            TitleGradientEnd.Color = Color.FromRgb(30, 58, 138);
+            TitleGradientStart.Color = Color.FromRgb(0, 72, 49);
+            TitleGradientEnd.Color = Color.FromRgb(0, 132, 61);
             ThemeToggleButton.Content = "ダークモードに切替";
             StatusMessageIfPossible("ライトモードに切り替えました。");
         }
@@ -200,12 +200,12 @@ public partial class MainWindow : Window
 
         // COLORREF format: 0x00BBGGRR
         var captionColor = _isDarkMode
-            ? ToColorRef(2, 6, 23)
-            : ToColorRef(15, 23, 42);
+            ? ToColorRef(0, 48, 32)
+            : ToColorRef(0, 72, 49);
         var textColor = ToColorRef(255, 255, 255);
         var borderColor = _isDarkMode
-            ? ToColorRef(51, 65, 85)
-            : ToColorRef(30, 58, 138);
+            ? ToColorRef(23, 91, 61)
+            : ToColorRef(0, 132, 61);
 
         _ = DwmSetWindowAttribute(hwnd, DWMWA_CAPTION_COLOR, ref captionColor, sizeof(int));
         _ = DwmSetWindowAttribute(hwnd, DWMWA_TEXT_COLOR, ref textColor, sizeof(int));
