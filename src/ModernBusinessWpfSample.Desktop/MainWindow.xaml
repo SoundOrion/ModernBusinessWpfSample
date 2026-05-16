@@ -9,7 +9,7 @@
         WindowStartupLocation="CenterScreen"
         WindowStyle="None"
         ResizeMode="CanResize"
-        Background="#F3F6FB">
+        Background="{DynamicResource AppBg}">
     <shell:WindowChrome.WindowChrome>
         <shell:WindowChrome CaptionHeight="0"
                             ResizeBorderThickness="8"
@@ -37,6 +37,14 @@
         <SolidColorBrush x:Key="TitleBarBorder" Color="#1D4ED8" />
         <SolidColorBrush x:Key="TitleBarText" Color="#FFFFFF" />
         <SolidColorBrush x:Key="TitleBarSubtle" Color="#BFDBFE" />
+        <SolidColorBrush x:Key="NavigationHover" Color="#F1F5F9" />
+        <SolidColorBrush x:Key="RowBorder" Color="#EEF2F7" />
+        <SolidColorBrush x:Key="HeaderIconBg" Color="#DBEAFE" />
+        <SolidColorBrush x:Key="HeaderBadgeBg" Color="#153E75" />
+        <SolidColorBrush x:Key="HeaderUserBg" Color="#172554" />
+        <SolidColorBrush x:Key="HeaderBadgeBorder" Color="#3B82F6" />
+        <SolidColorBrush x:Key="HeaderOnline" Color="#22C55E" />
+        <SolidColorBrush x:Key="HeaderOnlineText" Color="#DCFCE7" />
 
         <Style x:Key="PageTitle" TargetType="TextBlock">
             <Setter Property="FontSize" Value="28" />
@@ -103,6 +111,9 @@
             <Setter Property="Height" Value="42" />
             <Setter Property="FontSize" Value="14" />
             <Setter Property="Padding" Value="10,0" />
+            <Setter Property="Foreground" Value="{StaticResource TextStrong}" />
+            <Setter Property="Background" Value="{StaticResource Surface}" />
+            <Setter Property="BorderBrush" Value="{StaticResource BorderSoft}" />
             <Setter Property="VerticalContentAlignment" Value="Center" />
         </Style>
 
@@ -236,7 +247,7 @@
                         </Border>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsMouseOver" Value="True">
-                                <Setter TargetName="Root" Property="Background" Value="#F1F5F9" />
+                                <Setter TargetName="Root" Property="Background" Value="{StaticResource NavigationHover}" />
                                 <Setter Property="Foreground" Value="{StaticResource TextStrong}" />
                             </Trigger>
                             <Trigger Property="IsSelected" Value="True">
@@ -263,7 +274,7 @@
             <Setter Property="CanUserResizeRows" Value="False" />
         </Style>
         <Style TargetType="DataGridColumnHeader">
-            <Setter Property="Background" Value="#F8FAFC" />
+            <Setter Property="Background" Value="{StaticResource SurfaceAlt}" />
             <Setter Property="Foreground" Value="{StaticResource TextMuted}" />
             <Setter Property="FontWeight" Value="SemiBold" />
             <Setter Property="Padding" Value="14,0" />
@@ -286,12 +297,12 @@
             </Setter>
         </Style>
         <Style TargetType="DataGridRow">
-            <Setter Property="Background" Value="White" />
-            <Setter Property="BorderBrush" Value="#EEF2F7" />
+            <Setter Property="Background" Value="{StaticResource Surface}" />
+            <Setter Property="BorderBrush" Value="{StaticResource RowBorder}" />
             <Setter Property="BorderThickness" Value="0,0,0,1" />
             <Style.Triggers>
                 <Trigger Property="IsMouseOver" Value="True">
-                    <Setter Property="Background" Value="#F8FAFC" />
+                    <Setter Property="Background" Value="{StaticResource SurfaceAlt}" />
                 </Trigger>
             </Style.Triggers>
         </Style>
@@ -311,8 +322,8 @@
         <Border Grid.Row="0" Grid.ColumnSpan="2" BorderBrush="{StaticResource TitleBarBorder}" BorderThickness="0,0,0,1" Padding="22,0" MouseLeftButtonDown="AppHeader_MouseLeftButtonDown">
             <Border.Background>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
-                    <GradientStop Color="#0F172A" Offset="0" />
-                    <GradientStop Color="#1E3A8A" Offset="1" />
+                    <GradientStop x:Name="TitleGradientStart" Color="#0F172A" Offset="0" />
+                    <GradientStop x:Name="TitleGradientEnd" Color="#1E3A8A" Offset="1" />
                 </LinearGradientBrush>
             </Border.Background>
             <Grid>
@@ -322,7 +333,7 @@
                 </Grid.ColumnDefinitions>
 
                 <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
-                    <Border Width="38" Height="38" CornerRadius="13" Background="#DBEAFE" Margin="0,0,14,0">
+                    <Border Width="38" Height="38" CornerRadius="13" Background="{StaticResource HeaderIconBg}" Margin="0,0,14,0">
                         <TextBlock Text="業" FontSize="16" FontWeight="Bold" Foreground="{StaticResource Accent}" HorizontalAlignment="Center" VerticalAlignment="Center" />
                     </Border>
                     <StackPanel>
@@ -332,13 +343,13 @@
                 </StackPanel>
 
                 <StackPanel Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center">
-                    <Border CornerRadius="15" Background="#153E75" BorderBrush="#3B82F6" BorderThickness="1" Padding="13,8" Margin="0,0,10,0">
+                    <Border CornerRadius="15" Background="{StaticResource HeaderBadgeBg}" BorderBrush="{StaticResource HeaderBadgeBorder}" BorderThickness="1" Padding="13,8" Margin="0,0,10,0">
                         <StackPanel Orientation="Horizontal">
-                            <Ellipse Width="8" Height="8" Fill="#22C55E" Margin="0,0,8,0" />
-                            <TextBlock Text="Online" FontWeight="SemiBold" Foreground="#DCFCE7" FontSize="12" />
+                            <Ellipse Width="8" Height="8" Fill="{StaticResource HeaderOnline}" Margin="0,0,8,0" />
+                            <TextBlock Text="Online" FontWeight="SemiBold" Foreground="{StaticResource HeaderOnlineText}" FontSize="12" />
                         </StackPanel>
                     </Border>
-                    <Border CornerRadius="15" Background="#172554" BorderBrush="#3B82F6" BorderThickness="1" Padding="13,8" Margin="0,0,10,0">
+                    <Border CornerRadius="15" Background="{StaticResource HeaderUserBg}" BorderBrush="{StaticResource HeaderBadgeBorder}" BorderThickness="1" Padding="13,8" Margin="0,0,10,0">
                         <TextBlock Text="Admin User" FontWeight="SemiBold" Foreground="White" FontSize="12" />
                     </Border>
                     <Button Style="{StaticResource TitleBarButton}" Content="−" ToolTip="最小化" Click="MinimizeButton_Click" />
@@ -358,7 +369,7 @@
                     <TextBlock Text="Sales operations sample" Foreground="{StaticResource TextMuted}" Margin="0,6,0,0" />
                 </StackPanel>
 
-                <Border DockPanel.Dock="Bottom" CornerRadius="18" Background="#F8FAFC" Padding="16" Margin="0,24,0,0" BorderBrush="{StaticResource BorderSoft}" BorderThickness="1">
+                <Border DockPanel.Dock="Bottom" CornerRadius="18" Background="{StaticResource SurfaceAlt}" Padding="16" Margin="0,24,0,0" BorderBrush="{StaticResource BorderSoft}" BorderThickness="1">
                     <StackPanel>
                         <TextBlock Text="Architecture" FontWeight="SemiBold" Foreground="{StaticResource TextStrong}" />
                         <TextBlock Text="Pure WPF / MVVM / DI / UseCase" Foreground="{StaticResource TextMuted}" FontSize="12" TextWrapping="Wrap" Margin="0,6,0,0" />
@@ -474,7 +485,7 @@
                                     <Button DockPanel.Dock="Right" Style="{StaticResource GhostButton}" Content="再読込" Width="110" Command="{Binding LoadCustomersCommand}" />
                                 </DockPanel>
 
-                                <Border CornerRadius="18" Background="#F8FAFC" BorderBrush="{StaticResource BorderSoft}" BorderThickness="1" Padding="18" Margin="0,0,0,20">
+                                <Border CornerRadius="18" Background="{StaticResource SurfaceAlt}" BorderBrush="{StaticResource BorderSoft}" BorderThickness="1" Padding="18" Margin="0,0,0,20">
                                     <Grid>
                                         <Grid.ColumnDefinitions>
                                             <ColumnDefinition Width="1.2*" />
@@ -498,7 +509,7 @@
                                     </Grid>
                                 </Border>
 
-                                <Border CornerRadius="18" BorderBrush="{StaticResource BorderSoft}" BorderThickness="1" Background="White" Padding="1">
+                                <Border CornerRadius="18" BorderBrush="{StaticResource BorderSoft}" BorderThickness="1" Background="{StaticResource Surface}" Padding="1">
                                     <DataGrid ItemsSource="{Binding Customers}" AutoGenerateColumns="False" CanUserAddRows="False" Height="430">
                                         <DataGrid.Columns>
                                             <DataGridTextColumn Header="コード" Binding="{Binding Code}" Width="110" />
@@ -524,7 +535,7 @@
                                     <Button DockPanel.Dock="Right" Style="{StaticResource GhostButton}" Content="再読込" Width="110" Command="{Binding LoadOrdersCommand}" />
                                 </DockPanel>
 
-                                <Border CornerRadius="18" Background="#F8FAFC" BorderBrush="{StaticResource BorderSoft}" BorderThickness="1" Padding="18" Margin="0,0,0,20">
+                                <Border CornerRadius="18" Background="{StaticResource SurfaceAlt}" BorderBrush="{StaticResource BorderSoft}" BorderThickness="1" Padding="18" Margin="0,0,0,20">
                                     <Grid>
                                         <Grid.ColumnDefinitions>
                                             <ColumnDefinition Width="2*" />
@@ -543,7 +554,7 @@
                                     </Grid>
                                 </Border>
 
-                                <Border CornerRadius="18" BorderBrush="{StaticResource BorderSoft}" BorderThickness="1" Background="White" Padding="1">
+                                <Border CornerRadius="18" BorderBrush="{StaticResource BorderSoft}" BorderThickness="1" Background="{StaticResource Surface}" Padding="1">
                                     <DataGrid ItemsSource="{Binding Orders}" AutoGenerateColumns="False" CanUserAddRows="False" Height="430">
                                         <DataGrid.Columns>
                                             <DataGridTextColumn Header="受注番号" Binding="{Binding OrderNo}" Width="150" />
@@ -585,19 +596,32 @@
                         <Border Style="{StaticResource PanelCard}">
                             <StackPanel>
                                 <TextBlock Text="設定 / アーキテクチャメモ" Style="{StaticResource PageTitle}" />
-                                <Grid Margin="0,22,0,0">
+                                <Border CornerRadius="18" Background="{StaticResource SurfaceAlt}" BorderBrush="{StaticResource BorderSoft}" BorderThickness="1" Padding="20" Margin="0,22,0,0">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="Auto" />
+                                        </Grid.ColumnDefinitions>
+                                        <StackPanel>
+                                            <TextBlock Text="表示テーマ" FontSize="17" FontWeight="SemiBold" Foreground="{StaticResource TextStrong}" />
+                                            <TextBlock Text="ライトモードとダークモードを切り替えます。" Foreground="{StaticResource TextMuted}" TextWrapping="Wrap" Margin="0,8,0,0" />
+                                        </StackPanel>
+                                        <Button x:Name="ThemeToggleButton" Grid.Column="1" Style="{StaticResource PrimaryButton}" Content="ダークモードに切替" Width="170" Margin="24,0,0,0" VerticalAlignment="Center" Click="ThemeToggleButton_Click" />
+                                    </Grid>
+                                </Border>
+                                <Grid Margin="0,18,0,0">
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="*" />
                                         <ColumnDefinition Width="16" />
                                         <ColumnDefinition Width="*" />
                                     </Grid.ColumnDefinitions>
-                                    <Border CornerRadius="18" Background="#F8FAFC" BorderBrush="{StaticResource BorderSoft}" BorderThickness="1" Padding="20">
+                                    <Border CornerRadius="18" Background="{StaticResource SurfaceAlt}" BorderBrush="{StaticResource BorderSoft}" BorderThickness="1" Padding="20">
                                         <StackPanel>
                                             <TextBlock Text="Layering" FontSize="17" FontWeight="SemiBold" Foreground="{StaticResource TextStrong}" />
                                             <TextBlock Text="Desktop → Application → Domain。InfrastructureはApplicationのinterfaceを実装します。" Foreground="{StaticResource TextMuted}" TextWrapping="Wrap" Margin="0,8,0,0" />
                                         </StackPanel>
                                     </Border>
-                                    <Border Grid.Column="2" CornerRadius="18" Background="#F8FAFC" BorderBrush="{StaticResource BorderSoft}" BorderThickness="1" Padding="20">
+                                    <Border Grid.Column="2" CornerRadius="18" Background="{StaticResource SurfaceAlt}" BorderBrush="{StaticResource BorderSoft}" BorderThickness="1" Padding="20">
                                         <StackPanel>
                                             <TextBlock Text="Data Path" FontSize="17" FontWeight="SemiBold" Foreground="{StaticResource TextStrong}" />
                                             <TextBlock Text="%LOCALAPPDATA%\ModernBusinessWpfSample" Foreground="{StaticResource TextMuted}" TextWrapping="Wrap" Margin="0,8,0,0" />
