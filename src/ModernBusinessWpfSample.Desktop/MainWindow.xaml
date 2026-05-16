@@ -21,30 +21,31 @@
     <Window.Resources>
         <conv:StringEqualsToVisibilityConverter x:Key="StringEqualsToVisibilityConverter" />
 
-        <SolidColorBrush x:Key="AppBg" Color="#F1F8F4" />
+        <SolidColorBrush x:Key="AppBg" Color="#F5F7FB" />
         <SolidColorBrush x:Key="Surface" Color="#FFFFFF" />
-        <SolidColorBrush x:Key="SurfaceAlt" Color="#F7FBF8" />
-        <SolidColorBrush x:Key="BorderSoft" Color="#D6E9DD" />
-        <SolidColorBrush x:Key="TextStrong" Color="#123326" />
-        <SolidColorBrush x:Key="TextMuted" Color="#5D776B" />
-        <SolidColorBrush x:Key="Accent" Color="#00843D" />
-        <SolidColorBrush x:Key="AccentHover" Color="#006B31" />
-        <SolidColorBrush x:Key="AccentSoft" Color="#E5F4EB" />
-        <SolidColorBrush x:Key="SuccessSoft" Color="#E6F7ED" />
-        <SolidColorBrush x:Key="Success" Color="#009A44" />
-        <SolidColorBrush x:Key="TitleBarBg" Color="#004831" />
-        <SolidColorBrush x:Key="TitleBarBg2" Color="#00843D" />
-        <SolidColorBrush x:Key="TitleBarBorder" Color="#006B31" />
+        <SolidColorBrush x:Key="SurfaceAlt" Color="#F8FAFC" />
+        <SolidColorBrush x:Key="BorderSoft" Color="#CBD5E1" />
+        <SolidColorBrush x:Key="TextStrong" Color="#0F172A" />
+        <SolidColorBrush x:Key="TextMuted" Color="#64748B" />
+        <SolidColorBrush x:Key="Accent" Color="#2563EB" />
+        <SolidColorBrush x:Key="AccentHover" Color="#1D4ED8" />
+        <SolidColorBrush x:Key="AccentText" Color="#1D4ED8" />
+        <SolidColorBrush x:Key="AccentSoft" Color="#DBEAFE" />
+        <SolidColorBrush x:Key="SuccessSoft" Color="#DCFCE7" />
+        <SolidColorBrush x:Key="Success" Color="#059669" />
+        <SolidColorBrush x:Key="TitleBarBg" Color="#0F172A" />
+        <SolidColorBrush x:Key="TitleBarBg2" Color="#2563EB" />
+        <SolidColorBrush x:Key="TitleBarBorder" Color="#1D4ED8" />
         <SolidColorBrush x:Key="TitleBarText" Color="#FFFFFF" />
-        <SolidColorBrush x:Key="TitleBarSubtle" Color="#BDEFD1" />
-        <SolidColorBrush x:Key="NavigationHover" Color="#EDF8F1" />
-        <SolidColorBrush x:Key="RowBorder" Color="#E4F1E9" />
-        <SolidColorBrush x:Key="HeaderIconBg" Color="#D8F3E3" />
-        <SolidColorBrush x:Key="HeaderBadgeBg" Color="#006B31" />
-        <SolidColorBrush x:Key="HeaderUserBg" Color="#00523A" />
-        <SolidColorBrush x:Key="HeaderBadgeBorder" Color="#2FBF6A" />
-        <SolidColorBrush x:Key="HeaderOnline" Color="#2FBF6A" />
-        <SolidColorBrush x:Key="HeaderOnlineText" Color="#DCFCE7" />
+        <SolidColorBrush x:Key="TitleBarSubtle" Color="#DBEAFE" />
+        <SolidColorBrush x:Key="NavigationHover" Color="#EFF6FF" />
+        <SolidColorBrush x:Key="RowBorder" Color="#E2E8F0" />
+        <SolidColorBrush x:Key="HeaderIconBg" Color="#EFF6FF" />
+        <SolidColorBrush x:Key="HeaderBadgeBg" Color="#1D4ED8" />
+        <SolidColorBrush x:Key="HeaderUserBg" Color="#1E3A8A" />
+        <SolidColorBrush x:Key="HeaderBadgeBorder" Color="#60A5FA" />
+        <SolidColorBrush x:Key="HeaderOnline" Color="#60A5FA" />
+        <SolidColorBrush x:Key="HeaderOnlineText" Color="#DBEAFE" />
 
         <Style x:Key="PageTitle" TargetType="TextBlock">
             <Setter Property="FontSize" Value="28" />
@@ -59,7 +60,7 @@
         </Style>
 
         <Style x:Key="LabelText" TargetType="TextBlock">
-            <Setter Property="FontSize" Value="12" />
+            <Setter Property="FontSize" Value="13" />
             <Setter Property="FontWeight" Value="SemiBold" />
             <Setter Property="Foreground" Value="{DynamicResource TextMuted}" />
             <Setter Property="Margin" Value="0,0,0,6" />
@@ -74,7 +75,7 @@
             <Setter Property="Margin" Value="0,0,0,16" />
             <Setter Property="Effect">
                 <Setter.Value>
-                    <DropShadowEffect BlurRadius="22" ShadowDepth="4" Opacity="0.07" Color="#5D776B" />
+                    <DropShadowEffect BlurRadius="22" ShadowDepth="4" Opacity="0.07" Color="#64748B" />
                 </Setter.Value>
             </Setter>
         </Style>
@@ -96,7 +97,7 @@
         <Style x:Key="InputBox" TargetType="TextBox">
             <Setter Property="Height" Value="42" />
             <Setter Property="Padding" Value="14,0" />
-            <Setter Property="FontSize" Value="14" />
+            <Setter Property="FontSize" Value="15" />
             <Setter Property="Foreground" Value="{DynamicResource TextStrong}" />
             <Setter Property="Background" Value="{DynamicResource Surface}" />
             <Setter Property="BorderBrush" Value="{DynamicResource BorderSoft}" />
@@ -121,7 +122,7 @@
         <Style TargetType="ComboBox">
             <Setter Property="Height" Value="42" />
             <Setter Property="Padding" Value="12,0" />
-            <Setter Property="FontSize" Value="14" />
+            <Setter Property="FontSize" Value="15" />
             <Setter Property="Foreground" Value="{DynamicResource TextStrong}" />
             <Setter Property="Background" Value="{DynamicResource Surface}" />
             <Setter Property="BorderBrush" Value="{DynamicResource BorderSoft}" />
@@ -147,7 +148,7 @@
                                 <Setter TargetName="Root" Property="Background" Value="{DynamicResource AccentHover}" />
                             </Trigger>
                             <Trigger Property="IsEnabled" Value="False">
-                                <Setter Property="Opacity" Value="0.55" />
+                                <Setter Property="Opacity" Value="0.72" />
                             </Trigger>
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
@@ -235,7 +236,7 @@
                             <Trigger Property="IsSelected" Value="True">
                                 <Setter TargetName="Root" Property="Background" Value="{DynamicResource AccentSoft}" />
                                 <Setter TargetName="Indicator" Property="Background" Value="{DynamicResource Accent}" />
-                                <Setter Property="Foreground" Value="{DynamicResource Accent}" />
+                                <Setter Property="Foreground" Value="{DynamicResource AccentText}" />
                             </Trigger>
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
@@ -248,8 +249,8 @@
             <Setter Property="BorderThickness" Value="0" />
             <Setter Property="GridLinesVisibility" Value="None" />
             <Setter Property="HeadersVisibility" Value="Column" />
-            <Setter Property="RowHeight" Value="46" />
-            <Setter Property="FontSize" Value="14" />
+            <Setter Property="RowHeight" Value="48" />
+            <Setter Property="FontSize" Value="15" />
             <Setter Property="Foreground" Value="{DynamicResource TextStrong}" />
             <Setter Property="HorizontalGridLinesBrush" Value="Transparent" />
             <Setter Property="VerticalGridLinesBrush" Value="Transparent" />
@@ -257,7 +258,7 @@
         </Style>
         <Style TargetType="DataGridColumnHeader">
             <Setter Property="Background" Value="{DynamicResource SurfaceAlt}" />
-            <Setter Property="Foreground" Value="{DynamicResource TextMuted}" />
+            <Setter Property="Foreground" Value="{DynamicResource TextStrong}" />
             <Setter Property="FontWeight" Value="SemiBold" />
             <Setter Property="Padding" Value="14,0" />
             <Setter Property="Height" Value="44" />
@@ -306,8 +307,8 @@
         <Border Grid.Row="0" Grid.ColumnSpan="2" BorderBrush="{DynamicResource TitleBarBorder}" BorderThickness="0,0,0,1" Padding="22,0" MouseLeftButtonDown="AppHeader_MouseLeftButtonDown">
             <Border.Background>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
-                    <GradientStop x:Name="TitleGradientStart" Color="#004831" Offset="0" />
-                    <GradientStop x:Name="TitleGradientEnd" Color="#00843D" Offset="1" />
+                    <GradientStop x:Name="TitleGradientStart" Color="#0F172A" Offset="0" />
+                    <GradientStop x:Name="TitleGradientEnd" Color="#2563EB" Offset="1" />
                 </LinearGradientBrush>
             </Border.Background>
             <Grid>
@@ -318,7 +319,7 @@
 
                 <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
                     <Border Width="38" Height="38" CornerRadius="13" Background="{DynamicResource HeaderIconBg}" Margin="0,0,14,0">
-                        <TextBlock Text="業" FontSize="16" FontWeight="Bold" Foreground="{DynamicResource Accent}" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        <TextBlock Text="業" FontSize="16" FontWeight="Bold" Foreground="{DynamicResource AccentText}" HorizontalAlignment="Center" VerticalAlignment="Center" />
                     </Border>
                     <TextBlock Text="Sales Operations Console" FontSize="20" FontWeight="SemiBold" Foreground="{DynamicResource TitleBarText}" VerticalAlignment="Center" />
                 </StackPanel>
@@ -331,7 +332,7 @@
                         </StackPanel>
                     </Border>
                     <Border CornerRadius="15" Background="{DynamicResource HeaderUserBg}" BorderBrush="{DynamicResource HeaderBadgeBorder}" BorderThickness="1" Padding="13,8" Margin="0,0,10,0">
-                        <TextBlock Text="Admin User" FontWeight="SemiBold" Foreground="White" FontSize="12" />
+                        <TextBlock Text="Admin User" FontWeight="SemiBold" Foreground="{DynamicResource TitleBarText}" FontSize="12" />
                     </Border>
                     <Button Style="{StaticResource TitleBarButton}" Content="−" ToolTip="最小化" Click="MinimizeButton_Click" />
                     <Button x:Name="MaximizeRestoreButton" Style="{StaticResource TitleBarButton}" Content="□" ToolTip="最大化" Click="MaximizeRestoreButton_Click" />
@@ -344,7 +345,7 @@
             <DockPanel LastChildFill="True">
                 <StackPanel DockPanel.Dock="Top" Margin="0,18,0,26">
                     <Border Width="48" Height="48" CornerRadius="16" Background="{DynamicResource AccentSoft}" HorizontalAlignment="Left">
-                        <TextBlock Text="BH" FontSize="16" FontWeight="Bold" Foreground="{DynamicResource Accent}" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        <TextBlock Text="BH" FontSize="16" FontWeight="Bold" Foreground="{DynamicResource AccentText}" HorizontalAlignment="Center" VerticalAlignment="Center" />
                     </Border>
                     <TextBlock Text="Business Hub" FontSize="24" FontWeight="Bold" Foreground="{DynamicResource TextStrong}" Margin="0,16,0,0" />
                 </StackPanel>
@@ -495,7 +496,7 @@
                                                     <DataGridTemplateColumn.CellTemplate>
                                                         <DataTemplate>
                                                             <Border Style="{StaticResource Badge}">
-                                                                <TextBlock Text="{Binding Segment}" Foreground="{DynamicResource Accent}" FontWeight="SemiBold" FontSize="12" />
+                                                                <TextBlock Text="{Binding Segment}" Foreground="{DynamicResource AccentText}" FontWeight="SemiBold" FontSize="12" />
                                                             </Border>
                                                         </DataTemplate>
                                                     </DataGridTemplateColumn.CellTemplate>
