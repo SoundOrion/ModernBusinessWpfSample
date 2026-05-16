@@ -1,6 +1,6 @@
-# ModernBusinessWpfSample (.NET 8 / WPF-UI)
+# ModernBusinessWpfSample (.NET 8 / Pure WPF)
 
-WPF-UI を使った、ライトテーマ標準の業務アプリ風サンプルです。単なる API デモではなく、顧客管理・受注管理・レポート出力を含めています。
+WPF 標準機能だけで作った、ライトテーマ標準の業務アプリ風サンプルです。WPF-UI などの外部 UI フレームワークに依存せず、顧客管理・受注管理・レポート出力を含めています。
 
 ## 構成
 
@@ -24,7 +24,7 @@ src/
 - CommunityToolkit.Mvvm
 - typed HttpClient
 - Microsoft.Extensions.Http.Resilience
-- WPF-UI FluentWindow
+- Pure WPF custom chrome
 - ライトテーマ標準
 - ローカル JSON リポジトリ
 
@@ -54,7 +54,7 @@ Desktop\ModernBusinessWpfSampleReports
 
 ## UI refresh
 
-`ModernBusinessWpfSample-net8-polished.zip` はライトテーマ前提で、業務アプリらしく以下を調整しています。
+ライトテーマ前提で、業務アプリらしく以下を調整しています。
 
 - 左ナビゲーションをカード風に変更
 - Dashboard / Customers / Orders / Reports / Settings の各画面をカードレイアウト化
@@ -65,8 +65,4 @@ Desktop\ModernBusinessWpfSampleReports
 
 ## UI update
 
-This edition keeps the native Windows title bar visible and adds an application-level top header above the left navigation and main workspace.
-
-## Header close button
-
-The colored application header includes a right-side close button (`×`). Clicking it calls `Close()` on the main window. Header dragging ignores header action buttons so the close button does not accidentally start `DragMove()`.
+WPF-UI の `FluentWindow` を廃止し、標準 WPF の `Window` + `WindowChrome` によるカスタムクロームへ移行しました。グラデーションヘッダー、カードUI、カスタム入力/ボタン/DataGridスタイル、最小化・最大化・閉じるボタンを WPF 標準のみで実装しています。
